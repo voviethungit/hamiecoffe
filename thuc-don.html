@@ -1,0 +1,791 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#113d32">
+  <meta name="description" content="Thực đơn HAMIE Coffee & Tea">
+  <title>Thực đơn | HAMIE Coffee & Tea</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green:#113d32;
+      --dark:#09291f;
+      --cream:#faf6ec;
+      --muted:#829086;
+      --gold:#d8b877;
+    }
+
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0;
+      color:var(--green);
+      background:var(--cream);
+      font-family:'Be Vietnam Pro',Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    a { text-decoration:none; color:inherit; }
+    button,input,select { font:inherit; }
+    button { cursor:pointer; }
+    img { width:100%; display:block; }
+    a:focus-visible,button:focus-visible,
+    input:focus-visible,select:focus-visible {
+      outline:3px solid var(--gold);
+      outline-offset:3px;
+    }
+    .container {
+      width:min(100% - 160px,1280px);
+      margin:0 auto;
+    }
+    .sr-only {
+      position:absolute;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+    }
+
+    /* HEADER */
+    .site-header {
+      background:var(--cream);
+      position:relative;
+      z-index:20;
+    }
+    .header-inner {
+      min-height:90px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+    }
+    .brand {
+      display:flex;
+      flex-direction:column;
+      min-width:134px;
+      line-height:1;
+    }
+    .brand strong {
+      font-size:28px;
+      font-weight:800;
+      letter-spacing:-1.2px;
+    }
+    .brand small {
+      margin-top:7px;
+      font-size:9px;
+      font-weight:700;
+    }
+    .site-nav {
+      flex:1;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:37px;
+    }
+    .site-nav a {
+      font-size:12px;
+      font-weight:600;
+      white-space:nowrap;
+      transition:color .2s;
+    }
+    .site-nav a:hover,
+    .site-nav a[aria-current="page"] {
+      color:#5a8b69;
+    }
+    .contact-btn {
+      min-width:118px;
+      height:45px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:99px;
+      background:#194a3a;
+      color:white;
+      font-size:11px;
+      font-weight:700;
+      transition:.2s;
+    }
+    .contact-btn:hover {
+      background:#0c3025;
+      transform:translateY(-2px);
+    }
+    .mobile-toggle {
+      display:none;
+      background:transparent;
+      border:0;
+      padding:9px;
+      color:var(--green);
+    }
+    .mobile-toggle svg {
+      width:26px;
+      height:26px;
+      display:block;
+    }
+
+    /* HERO */
+    .menu-hero {
+      min-height:296px;
+      background:var(--green);
+      color:white;
+    }
+    .menu-hero .container {
+      padding-top:44px;
+      padding-bottom:43px;
+    }
+    .eyebrow {
+      color:#e4c077;
+      font-size:16px;
+      font-weight:700;
+      line-height:1.6;
+      margin:0 0 41px;
+    }
+    .menu-hero h1 {
+      font-size:49px;
+      font-weight:800;
+      line-height:1.2;
+      letter-spacing:-1.9px;
+      margin:0 0 32px;
+    }
+    .menu-hero p:last-child {
+      margin:0;
+      color:#d1ded5;
+      font-size:17px;
+      line-height:1.7;
+    }
+
+    /* MENU SECTION */
+    .menu-section {
+      padding:53px 0 71px;
+    }
+    .menu-section h2 {
+      font-size:38px;
+      line-height:1.35;
+      font-weight:800;
+      letter-spacing:-1.2px;
+      margin:0 0 11px;
+    }
+    .lead {
+      color:var(--muted);
+      margin:0;
+      font-size:15px;
+      line-height:1.8;
+    }
+
+    /* FILTER + SEARCH */
+    .menu-controls {
+      display:grid;
+      grid-template-columns:360px minmax(0,1fr);
+      gap:16px;
+      margin-top:31px;
+    }
+    .select-wrap,.search-wrap {
+      height:60px;
+      position:relative;
+    }
+    .select-wrap select,
+    .search-wrap input {
+      width:100%;
+      height:100%;
+      background:white;
+      border:1px solid #d9e2db;
+      border-radius:13px;
+      color:var(--green);
+      outline:0;
+    }
+    .select-wrap select {
+      padding:0 48px 0 19px;
+      appearance:none;
+      font-size:13px;
+      font-weight:700;
+      cursor:pointer;
+    }
+    .select-wrap svg {
+      position:absolute;
+      right:22px;
+      top:50%;
+      width:20px;
+      height:20px;
+      transform:translateY(-50%);
+      pointer-events:none;
+    }
+    .search-wrap input {
+      border-color:transparent;
+      padding:0 20px 0 52px;
+      font-size:14px;
+    }
+    .search-wrap input::placeholder {
+      color:#8c9990;
+    }
+    .search-wrap svg {
+      position:absolute;
+      left:20px;
+      top:50%;
+      width:21px;
+      height:21px;
+      transform:translateY(-50%);
+      color:#7f9587;
+    }
+    .select-wrap:focus-within select,
+    .search-wrap:focus-within input {
+      border-color:#6c9a7e;
+      box-shadow:0 0 0 3px #6c9a7e22;
+    }
+    .suggestions {
+      margin:11px 0 0;
+      color:#87968a;
+      font-size:12px;
+      line-height:1.8;
+    }
+    .suggestions button {
+      background:none;
+      border:0;
+      padding:0;
+      color:#849789;
+      font-size:inherit;
+    }
+    .suggestions button:hover {
+      color:var(--green);
+      text-decoration:underline;
+    }
+
+    /* PRODUCT CATEGORY GRID */
+    .card-grid {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:27px 32px;
+      margin-top:83px;
+    }
+    .menu-card {
+      background:white;
+      border-radius:19px;
+      padding:18px 18px 26px;
+      min-width:0;
+      transition:transform .2s,box-shadow .2s;
+    }
+    .menu-card:hover {
+      transform:translateY(-4px);
+      box-shadow:0 15px 29px #1e50341a;
+    }
+    .menu-card[hidden] { display:none; }
+    .card-photo {
+      overflow:hidden;
+      border-radius:15px;
+      aspect-ratio:1.28;
+    }
+    .card-photo img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .card-photo.coffee { background:#dfe9da; }
+    .card-photo.tea { background:#d7e6cb; }
+    .card-photo.fruit { background:#f3e6d5; }
+
+    .menu-card h3 {
+      margin:20px 9px 13px;
+      font-size:21px;
+      font-weight:700;
+      line-height:1.4;
+      letter-spacing:-.45px;
+    }
+    .menu-card p {
+      margin:0 9px;
+      color:#829086;
+      font-size:12px;
+      line-height:1.8;
+    }
+
+    /* EMPTY SEARCH RESULTS */
+    .empty-state {
+      padding:45px 20px;
+      margin-top:45px;
+      text-align:center;
+      background:white;
+      border-radius:16px;
+    }
+    .empty-state[hidden] { display:none; }
+    .empty-state h3 {
+      margin:0 0 10px;
+      font-size:22px;
+    }
+    .empty-state p {
+      color:var(--muted);
+      font-size:14px;
+    }
+    .reset-btn {
+      padding:12px 20px;
+      background:var(--green);
+      color:white;
+      border:0;
+      border-radius:50px;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background:#101010;
+      color:white;
+      text-align:center;
+      padding:68px 20px 53px;
+    }
+    .footer-brand {
+      font-size:28px;
+      letter-spacing:-.7px;
+      font-weight:800;
+      margin:0 0 34px;
+    }
+    .footer-nav {
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:28px;
+    }
+    .footer-nav a {
+      font-size:10px;
+      text-transform:uppercase;
+      color:#e7e7e7;
+      transition:color .2s;
+    }
+    .footer-nav a:hover { color:#c9dfa6; }
+    .socials {
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:12px;
+      margin-top:28px;
+    }
+    .socials span {
+      display:inline-grid;
+      place-items:center;
+      width:31px;
+      height:31px;
+      border:2px solid #91b48f;
+      border-radius:50%;
+      color:#b0d8a8;
+      font-size:13px;
+      font-weight:700;
+    }
+    .socials span:nth-child(2) {
+      font-size:9px;
+      font-weight:500;
+    }
+    .socials svg {
+      width:19px;
+      height:19px;
+    }
+    .copyright {
+      color:#666;
+      margin:37px 0 0;
+      font-size:11px;
+    }
+
+    /* TABLET */
+    @media(max-width:1180px) {
+      .container {
+        width:min(100% - 90px,1280px);
+      }
+      .header-inner { gap:18px; }
+      .site-nav { gap:20px; }
+      .site-nav a { font-size:11px; }
+      .menu-controls {
+        grid-template-columns:300px minmax(0,1fr);
+      }
+      .menu-card h3 { font-size:19px; }
+    }
+
+    @media(max-width:900px) {
+      .container { width:calc(100% - 48px); }
+      .header-inner { min-height:77px; }
+      .mobile-toggle {
+        display:block;
+        margin-left:auto;
+      }
+      .header-inner > .contact-btn { display:none; }
+      .site-nav {
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        background:var(--cream);
+        padding:20px 24px 28px;
+        box-shadow:0 18px 25px #09291f1c;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+      }
+      .site-nav.is-open { display:flex; }
+      .site-nav a {
+        font-size:14px;
+        padding:14px 4px;
+        border-bottom:1px solid #e6e7dd;
+      }
+      .menu-hero { min-height:270px; }
+      .menu-hero h1 { font-size:40px; }
+      .card-grid {
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:22px;
+        margin-top:58px;
+      }
+      .menu-controls {
+        grid-template-columns:270px minmax(0,1fr);
+      }
+    }
+
+    /* MOBILE */
+    @media(max-width:600px) {
+      .container { width:calc(100% - 36px); }
+      .header-inner { min-height:70px; }
+      .brand strong { font-size:24px; }
+      .brand small { font-size:8px; }
+
+      .menu-hero { min-height:245px; }
+      .menu-hero .container {
+        padding-top:34px;
+        padding-bottom:38px;
+      }
+      .eyebrow {
+        font-size:12px;
+        margin-bottom:29px;
+      }
+      .menu-hero h1 {
+        font-size:33px;
+        letter-spacing:-1px;
+        margin-bottom:22px;
+      }
+      .menu-hero p:last-child { font-size:13px; }
+
+      .menu-section { padding:36px 0 54px; }
+      .menu-section h2 { font-size:30px; }
+      .lead { font-size:13px; }
+      .menu-controls {
+        grid-template-columns:1fr;
+        gap:12px;
+        margin-top:27px;
+      }
+      .select-wrap,.search-wrap { height:54px; }
+      .suggestions { font-size:11px; }
+
+      .card-grid {
+        grid-template-columns:1fr;
+        margin-top:39px;
+        gap:19px;
+      }
+      .menu-card { padding:14px 14px 23px; }
+      .menu-card h3 {
+        font-size:19px;
+        margin:17px 8px 10px;
+      }
+      .menu-card p { margin:0 8px; }
+
+      .site-footer { padding:50px 18px 42px; }
+      .footer-nav { gap:14px 20px; }
+      .copyright { line-height:1.6; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="HAMIE, về trang chủ">
+        <strong>HAMIE</strong>
+        <small>COFFEE &amp; TEA</small>
+      </a>
+
+      <button type="button" class="mobile-toggle"
+        id="menuToggle"
+        aria-expanded="false"
+        aria-controls="siteNav"
+        aria-label="Mở menu">
+        <svg viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2"
+          stroke-linecap="round">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Điều hướng chính">
+        <a href="index.html">Trang chủ</a>
+        <a href="thuc-don.html" aria-current="page">Thực đơn</a>
+        <a href="index.html#about">Về HAMIE</a>
+        <a href="index.html#space">Không gian</a>
+        <a href="index.html#offers">Ưu đãi</a>
+        <a href="index.html#stories">Góc HAMIE</a>
+        <a href="index.html#contact">Liên hệ</a>
+      </nav>
+
+      <a class="contact-btn" href="index.html#contact">LIÊN HỆ</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO BANNER -->
+    <section class="menu-hero">
+      <div class="container">
+        <p class="eyebrow">MENU / HAMIE COFFEE &amp; TEA</p>
+        <h1>Tìm hương vị bạn yêu thích</h1>
+        <p>Cà phê • Trà • Thức uống thanh mát</p>
+      </div>
+    </section>
+
+    <!-- MENU SECTION -->
+    <section class="menu-section" aria-labelledby="menuHeading">
+      <div class="container">
+        <h2 id="menuHeading">Thực đơn HAMIE</h2>
+        <p class="lead">Chọn danh mục, tìm tên món và xem giá theo size.</p>
+
+        <!-- FILTER AND SEARCH -->
+        <div class="menu-controls">
+          <div class="select-wrap">
+            <label class="sr-only" for="categoryFilter">Lọc theo danh mục</label>
+            <select id="categoryFilter">
+              <option value="all">Tất cả đồ uống</option>
+              <option value="coffee">Cà phê</option>
+              <option value="tea">Trà &amp; trà sữa</option>
+              <option value="fruit">Trái cây &amp; nước ép</option>
+              <option value="blended">Đá xay &amp; sinh tố</option>
+            </select>
+            <svg aria-hidden="true" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor"
+              stroke-width="1.8" stroke-linecap="round">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </div>
+
+          <div class="search-wrap">
+            <label class="sr-only" for="menuSearch">Tìm đồ uống</label>
+            <svg aria-hidden="true" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor"
+              stroke-width="1.8" stroke-linecap="round">
+              <circle cx="10.8" cy="10.8" r="6.6"/>
+              <path d="m16 16 4.3 4.3"/>
+            </svg>
+            <input type="search" id="menuSearch"
+              placeholder="Tìm đồ uống hoặc nguyên liệu yêu thích..."
+              autocomplete="off">
+          </div>
+        </div>
+
+        <p class="suggestions">
+          Gợi ý:
+          <button type="button" data-search="phin">Cà phê pha phin</button>
+          &nbsp;·&nbsp;
+          <button type="button" data-search="trà sữa">Trà sữa</button>
+          &nbsp;·&nbsp;
+          <button type="button" data-search="trà trái cây">Trà trái cây</button>
+        </p>
+
+        <!-- GRID: 9 DANH MỤC -->
+        <div class="card-grid" id="menuGrid">
+
+          <article class="menu-card" data-group="coffee" data-name="Khám phá cà phê">
+            <div class="card-photo coffee">
+              <img src="assets/coffee.png" alt="Minh họa ly cà phê đá" loading="lazy">
+            </div>
+            <h3>Khám phá cà phê</h3>
+            <p>Thông tin lấy từ thực đơn chính thức</p>
+          </article>
+
+          <article class="menu-card" data-group="tea" data-name="Trà & hương lá">
+            <div class="card-photo tea">
+              <img src="assets/matcha.png" alt="Minh họa ly trà xanh" loading="lazy">
+            </div>
+            <h3>Trà &amp; hương lá</h3>
+            <p>Thông tin lấy từ thực đơn chính thức</p>
+          </article>
+
+          <article class="menu-card" data-group="fruit" data-name="Trái cây thanh mát">
+            <div class="card-photo fruit">
+              <img src="assets/orange-tea.png" alt="Minh họa ly nước trái cây" loading="lazy">
+            </div>
+            <h3>Trái cây thanh mát</h3>
+            <p>Thông tin lấy từ thực đơn chính thức</p>
+          </article>
+
+          <article class="menu-card" data-group="coffee" data-name="Cà phê pha máy">
+            <div class="card-photo coffee">
+              <img src="assets/coffee.png" alt="Minh họa ly cà phê pha máy" loading="lazy">
+            </div>
+            <h3>Cà phê pha máy</h3>
+            <p>Thông tin lấy từ thực đơn chính thức</p>
+          </article>
+
+          <article class="menu-card" data-group="tea" data-name="Trà trái cây">
+            <div class="card-photo tea">
+              <img src="assets/matcha.png" alt="Minh họa ly trà" loading="lazy">
+            </div>
+            <h3>Trà trái cây</h3>
+            <p>Thông tin lấy từ thực đơn chính thức</p>
+          </article>
+
+          <article class="menu-card" data-group="fruit blended" data-name="Đá xay & sinh tố">
+            <div class="card-photo fruit">
+              <img src="assets/orange-tea.png" alt="Minh họa ly thức uống trái cây" loading="lazy">
+            </div>
+            <h3>Đá xay &amp; sinh tố</h3>
+            <p>Thông tin lấy từ thực đơn chính thức</p>
+          </article>
+
+          <article class="menu-card" data-group="coffee" data-name="Hương phin truyền thống">
+            <div class="card-photo coffee">
+              <img src="assets/coffee.png" alt="Minh họa ly cà phê phin" loading="lazy">
+            </div>
+            <h3>Hương phin truyền thống</h3>
+            <p>Thông tin lấy từ thực đơn chính thức</p>
+          </article>
+
+          <article class="menu-card" data-group="tea" data-name="Một chút trà sữa">
+            <div class="card-photo tea">
+              <img src="assets/matcha.png" alt="Minh họa ly trà sữa" loading="lazy">
+            </div>
+            <h3>Một chút trà sữa</h3>
+            <p>Thông tin lấy từ thực đơn chính thức</p>
+          </article>
+
+          <article class="menu-card" data-group="fruit" data-name="Nước ép tươi mát">
+            <div class="card-photo fruit">
+              <img src="assets/orange-tea.png" alt="Minh họa ly nước ép" loading="lazy">
+            </div>
+            <h3>Nước ép tươi mát</h3>
+            <p>Thông tin lấy từ thực đơn chính thức</p>
+          </article>
+
+        </div>
+
+        <div class="empty-state" id="emptyState" role="status" hidden>
+          <h3>Chưa tìm thấy danh mục phù hợp</h3>
+          <p>Thử một từ khóa khác hoặc xem lại toàn bộ thực đơn nhé!</p>
+          <button type="button" class="reset-btn" id="resetSearch">
+            Xem tất cả đồ uống
+          </button>
+        </div>
+        <p class="sr-only" id="resultCount" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <h2 class="footer-brand">HAMIE</h2>
+
+    <nav class="footer-nav" aria-label="Điều hướng cuối trang">
+      <a href="index.html">Trang chủ</a>
+      <a href="thuc-don.html">Thực đơn</a>
+      <a href="index.html#about">Về HAMIE</a>
+      <a href="index.html#space">Không gian</a>
+      <a href="index.html#offers">Ưu đãi</a>
+      <a href="index.html#stories">Góc HAMIE</a>
+      <a href="index.html#contact">Liên hệ</a>
+    </nav>
+
+    <div class="socials" aria-label="Mạng xã hội">
+      <span title="Facebook">f</span>
+      <span title="Zalo">Zalo</span>
+      <span title="Website">
+        <svg viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.5"
+          aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M3 12h18M12 3c5 5 5 13 0 18M12 3c-5 5-5 13 0 18"/>
+        </svg>
+      </span>
+    </div>
+
+    <p class="copyright">
+      © 2026 HAMIE Coffee &amp; Tea. All rights reserved.
+    </p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const categoryFilter = document.querySelector('#categoryFilter');
+    const menuSearch = document.querySelector('#menuSearch');
+    const cards = [...document.querySelectorAll('.menu-card')];
+    const emptyState = document.querySelector('#emptyState');
+    const resultCount = document.querySelector('#resultCount');
+
+    // Tìm kiếm không phân biệt dấu tiếng Việt
+    function normalize(text) {
+      return text.toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/đ/g, 'd');
+    }
+
+    function filterMenu() {
+      const group = categoryFilter.value;
+      const keyword = normalize(menuSearch.value.trim());
+      let count = 0;
+
+      cards.forEach(card => {
+        const matchGroup = group === 'all' ||
+          card.dataset.group.split(' ').includes(group);
+
+        const matchText = !keyword ||
+          normalize(card.dataset.name).includes(keyword);
+
+        card.hidden = !(matchGroup && matchText);
+        if (!card.hidden) count++;
+      });
+
+      emptyState.hidden = count > 0;
+      resultCount.textContent =
+        `Hiển thị ${count} trên ${cards.length} danh mục đồ uống`;
+    }
+
+    categoryFilter.addEventListener('change', filterMenu);
+    menuSearch.addEventListener('input', filterMenu);
+
+    document.querySelectorAll('[data-search]').forEach(button => {
+      button.addEventListener('click', () => {
+        categoryFilter.value = 'all';
+        menuSearch.value = button.dataset.search;
+        filterMenu();
+        menuSearch.focus();
+      });
+    });
+
+    document.querySelector('#resetSearch').addEventListener('click', () => {
+      categoryFilter.value = 'all';
+      menuSearch.value = '';
+      filterMenu();
+      menuSearch.focus();
+    });
+
+    // Menu mobile
+    const menuToggle = document.querySelector('#menuToggle');
+    const siteNav = document.querySelector('#siteNav');
+
+    menuToggle.addEventListener('click', () => {
+      const open = siteNav.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? 'Đóng menu' : 'Mở menu');
+    });
+
+    siteNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        siteNav.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        siteNav.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    filterMenu();
+  </script>
+</body>
+</html>

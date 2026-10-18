@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#09291f" />
+  <meta name="description" content="HAMIE Coffee & Tea — Một góc chạm hương cà phê. Không gian nhẹ nhàng để gặp gỡ, học tập và thưởng thức hương vị thân quen." />
+  <title>HAMIE Coffee & Tea | Tinh hoa từ hạt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Đi tới nội dung chính</a>
+
+  <header class="site-header" id="top">
+    <div class="header-inner container">
+      <a href="#top" class="brand" aria-label="HAMIE Coffee & Tea, về trang chủ">
+        <strong>HAMIE</strong>
+        <span>COFFEE &amp; TEA</span>
+      </a>
+
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Mở menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="main-nav" aria-label="Điều hướng chính">
+        <a class="current" href="#top">Trang chủ</a>
+       <a href="thuc-don.html">Thực đơn</a>
+        <a href="#about">Về HAMIE</a>
+        <a href="#space">Không gian</a>
+        <a href="#offers">Ưu đãi</a>
+        <a href="#stories">Góc HAMIE</a>
+        <a href="#contact">Liên hệ</a>
+      </nav>
+      <button type="button" class="btn btn-dark header-contact" data-modal="contact">LIÊN HỆ</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="Chào mừng đến HAMIE Coffee & Tea">
+      <div class="hero-copy">
+        <div class="hero-copy-inner">
+          <p class="eyebrow hero-eyebrow" id="hero-eyebrow">MỘT GÓC CHẠM HƯƠNG CÀ PHÊ</p>
+          <h1 id="hero-title">Tinh hoa<br /><em>từ hạt,</em></h1>
+          <p class="hero-desc" id="hero-desc">Hương vị quen thuộc, trong một không gian thật khác.</p>
+          <div class="hero-cta">
+            <a href="#menu" class="btn btn-cream">XEM THỰC ĐƠN</a>
+            <button type="button" class="btn btn-outline-light" data-modal="contact">LIÊN HỆ</button>
+          </div>
+          <div class="dots hero-dots" id="hero-dots" aria-label="Chọn banner">
+            <button class="dot active" data-slide="0" aria-label="Banner 1" aria-current="true"></button>
+            <button class="dot" data-slide="1" aria-label="Banner 2"></button>
+            <button class="dot" data-slide="2" aria-label="Banner 3"></button>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <img id="hero-image" class="hero-graphic" src="assets/hero-coffee.png" alt="" />
+        <span class="hero-secondary-caption" id="hero-secondary-caption" hidden>HAMIE — COFFEE &amp; TEA</span>
+      </div>
+      <button type="button" class="circle-arrow hero-prev" id="hero-prev" aria-label="Banner trước">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6M8 12h12"/></svg>
+      </button>
+      <button type="button" class="circle-arrow circle-arrow-beige hero-next" id="hero-next" aria-label="Banner tiếp theo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m10 6 6 6-6 6M4 12h12"/></svg>
+      </button>
+    </section>
+
+    <section class="welcome section-cream" id="about">
+      <div class="container">
+        <p class="eyebrow eyebrow-sage">RẤT VUI KHI BẠN GHÉ HAMIE</p>
+        <h2>Chào bạn, HAMIE đây!</h2>
+        <p class="section-sub">Một khoảng nghỉ nhẹ nhàng giữa nhịp sống rộn ràng.</p>
+        <p class="welcome-intro">Dù là học nhóm, làm việc hay một cuộc hẹn nhỏ,<br class="desktop-break" /> HAMIE luôn có một góc thật vừa vặn để bạn dừng chân.</p>
+      </div>
+    </section>
+
+    <section class="amenities section-white" id="amenities">
+      <div class="container">
+        <h2 class="section-serif">Ở HAMIE có gì hay?</h2>
+        <p class="section-sub">Thật thoải mái để ở lại thêm một chút.</p>
+        <div class="amenities-grid">
+          <article class="amenity-card">
+            <div class="amenity-top"><span>KHÔNG GIAN</span><span>01</span></div>
+            <h3>Mát lạnh trong nhà</h3>
+            <p>Một góc mát dịu để thảnh thơi.</p>
+          </article>
+          <article class="amenity-card">
+            <div class="amenity-top"><span>HỌC TẬP</span><span>02</span></div>
+            <h3>Wi-Fi &amp; ổ cắm</h3>
+            <p>Thoải mái học nhóm và làm việc.</p>
+          </article>
+          <article class="amenity-card">
+            <div class="amenity-top"><span>CHECK-IN</span><span>03</span></div>
+            <h3>Góc check-in xinh</h3>
+            <p>Trong nhà, ngoài trời, nhiều góc đẹp.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="favorites section-cream" id="menu">
+      <div class="container">
+        <div class="section-head section-head-side">
+          <div>
+            <h2>Một vài món được yêu thích</h2>
+            <p class="section-sub">Hương vị thân quen cho mỗi khoảnh khắc tại HAMIE.</p>
+          </div>
+          <a href="thuc-don.html" class="btn btn-dark">
+  XEM TOÀN BỘ THỰC ĐƠN
+</a>
+        </div>
+        <div class="favorites-grid">
+          <article class="favorite-item">
+            <img src="assets/coffee.png" alt="Minh họa ly cà phê sữa nhiều lớp của HAMIE" loading="lazy" />
+            <h3>Cà phê phin &amp; phin pha máy</h3>
+          </article>
+          <article class="favorite-item">
+            <img src="assets/matcha.png" alt="Minh họa ly trà xanh của HAMIE" loading="lazy" />
+            <h3>Trà sữa &amp; trà trái cây</h3>
+          </article>
+          <article class="favorite-item">
+            <img src="assets/orange-tea.png" alt="Minh họa ly trà cam trái cây của HAMIE" loading="lazy" />
+            <h3>Đồ uống trái cây &amp; đá xay</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="space section-white" id="space">
+      <div class="container">
+        <h2>Không gian dành cho bạn</h2>
+        <p class="section-sub">Thêm lựa chọn cho mỗi cuộc gặp: trong nhà hoặc ngoài trời.</p>
+        <div class="feature-carousel">
+          <button type="button" class="circle-arrow side-prev" id="space-prev" aria-label="Không gian trước">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6M8 12h12"/></svg>
+          </button>
+          <div class="feature-stage">
+            <div class="space-photo"><img id="space-image" src="assets/cozy-space.png" alt="Tranh minh họa không gian bên cửa sổ của HAMIE" loading="lazy" /></div>
+            <div class="feature-info">
+              <p class="eyebrow eyebrow-gold" id="space-label">KHÔNG GIAN HAMIE</p>
+              <h3 id="space-title">Không gian mát lành</h3>
+              <p class="feature-desc" id="space-desc">Một chỗ ngồi thoải mái, để bạn ở lại lâu hơn.</p>
+              <button type="button" class="btn btn-cream" data-modal="space">XEM HÌNH ẢNH</button>
+            </div>
+          </div>
+          <button type="button" class="circle-arrow circle-arrow-beige side-next" id="space-next" aria-label="Không gian tiếp theo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m10 6 6 6-6 6M4 12h12"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="offers section-sage" id="offers">
+      <div class="container offers-layout">
+        <div class="offers-copy">
+          <h2>Ưu đãi &amp; Sự kiện</h2>
+          <p class="section-sub">Những chương trình mới sẽ được cập nhật khi quán công bố.</p>
+          <button type="button" class="btn btn-dark" data-modal="offers">XEM ƯU ĐÃI</button>
+        </div>
+        <div class="offers-note">
+          <p class="eyebrow eyebrow-gold">SẮP CÓ TIN MỚI</p>
+          <p>Những điều thú vị sẽ được HAMIE chia sẻ tại đây.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="stories section-cream" id="stories">
+      <div class="container">
+        <h2>Những câu chuyện ở Góc HAMIE</h2>
+        <p class="section-sub">Cùng khám phá điều thú vị từ quán, hương vị và cuộc sống thường ngày.</p>
+        <div class="feature-carousel story-carousel">
+          <button type="button" class="circle-arrow side-prev" id="story-prev" aria-label="Câu chuyện trước">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6M8 12h12"/></svg>
+          </button>
+          <div class="feature-stage">
+            <div class="story-photo"><img id="story-image" src="assets/hamie-story.png" alt="Minh họa góc ngồi bên cửa sổ ở HAMIE" loading="lazy" /></div>
+            <div class="feature-info story-info">
+              <p class="eyebrow eyebrow-gold" id="story-label">GÓC HAMIE / CHUYỆN KỂ</p>
+              <h3 id="story-title">Một khoảng lặng giữa hương cà phê</h3>
+              <p class="feature-desc" id="story-desc">Một ly cà phê cho buổi sáng yên bình.</p>
+              <button type="button" class="btn btn-cream" data-modal="story">ĐỌC BÀI VIẾT</button>
+              <div class="dots story-dots" id="story-dots" aria-label="Chọn câu chuyện">
+                <button class="dot active" data-slide="0" aria-label="Câu chuyện 1" aria-current="true"></button>
+                <button class="dot" data-slide="1" aria-label="Câu chuyện 2"></button>
+                <button class="dot" data-slide="2" aria-label="Câu chuyện 3"></button>
+                <button class="dot" data-slide="3" aria-label="Câu chuyện 4"></button>
+                <button class="dot" data-slide="4" aria-label="Câu chuyện 5"></button>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="circle-arrow circle-arrow-beige side-next" id="story-next" aria-label="Câu chuyện tiếp theo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m10 6 6 6-6 6M4 12h12"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-strip" id="contact">
+      <div class="container contact-strip-inner">
+        <h2>Liên hệ và địa chỉ HAMIE</h2>
+        <button type="button" class="btn btn-dark" data-modal="contact">LIÊN HỆ</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="#top">HAMIE</a>
+      <nav class="footer-nav" aria-label="Điều hướng cuối trang">
+        <a href="#top">TRANG CHỦ</a><a href="#menu">THỰC ĐƠN</a><a href="#about">VỀ HAMIE</a><a href="#space">KHÔNG GIAN</a><a href="#offers">ƯU ĐÃI</a><a href="#stories">GÓC HAMIE</a><a href="#contact">LIÊN HỆ</a>
+      </nav>
+      <div class="social-links" aria-label="Kênh HAMIE">
+        <button type="button" aria-label="Facebook - thông tin đang cập nhật" data-modal="contact">f</button>
+        <button type="button" aria-label="Zalo - thông tin đang cập nhật" data-modal="contact">Zalo</button>
+        <button type="button" aria-label="Website HAMIE" data-modal="contact"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-5 4-5 14 0 18M12 3c5 4 5 14 0 18"/></svg></button>
+      </div>
+      <p class="copyright">© 2026 HAMIE Coffee &amp; Tea. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <dialog class="modal" id="info-modal" aria-labelledby="modal-heading">
+    <div class="modal-inner">
+      <button type="button" class="modal-close" id="modal-close" aria-label="Đóng cửa sổ">&times;</button>
+      <p class="eyebrow eyebrow-sage" id="modal-tag">HAMIE COFFEE &amp; TEA</p>
+      <h2 id="modal-heading">Thông tin HAMIE</h2>
+      <div id="modal-content"></div>
+      <button type="button" class="btn btn-dark modal-done" id="modal-done">ĐÓNG</button>
+    </div>
+  </dialog>
+</body>
+</html>
