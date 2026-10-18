@@ -1,0 +1,941 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09291f">
+  <meta name="description" content="Tìm hiểu về HAMIE Coffee & Tea - Một khoảng xanh cho mọi cuộc hẹn.">
+  <title>Về HAMIE | HAMIE Coffee & Tea</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #113d32;
+      --dark: #09291f;
+      --cream: #faf6ec;
+      --white: #ffffff;
+      --muted: #829086;
+      --gold: #dfc186;
+      --footer: #101010;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', Arial, sans-serif;
+      color: var(--green);
+      background: var(--cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1440px;
+      padding-left: 80px;
+      padding-right: 80px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    /* ================================
+       HEADER
+    ================================= */
+
+    .site-header {
+      width: 100%;
+      background: var(--cream);
+      position: relative;
+      z-index: 100;
+    }
+
+    .header-inner {
+      min-height: 94px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      min-width: 145px;
+    }
+
+    .brand strong {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .brand small {
+      font-size: 9px;
+      font-weight: 700;
+      margin-top: 7px;
+      letter-spacing: .1px;
+    }
+
+    .site-nav {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      gap: 39px;
+    }
+
+    .site-nav a {
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: color .2s ease;
+    }
+
+    .site-nav a:hover,
+    .site-nav a[aria-current="page"] {
+      color: #69947a;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #194a3a;
+      color: #fff;
+      border-radius: 50px;
+      min-width: 118px;
+      min-height: 45px;
+      font-size: 11px;
+      font-weight: 700;
+      transition: background .2s, transform .2s;
+    }
+
+    .contact-btn:hover {
+      background: #0b3025;
+      transform: translateY(-2px);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: transparent;
+      border: 0;
+      color: var(--green);
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-toggle svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    /* ================================
+       ABOUT HERO
+    ================================= */
+
+    .about-hero {
+      background: var(--dark);
+      color: white;
+      min-height: 570px;
+    }
+
+    .hero-inner {
+      min-height: 570px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      column-gap: 70px;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-label {
+      color: #dcc38e;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      margin-bottom: 53px;
+    }
+
+    .hero-title {
+      color: white;
+      font-size: clamp(40px, 4vw, 57px);
+      line-height: 1.28;
+      font-weight: 800;
+      letter-spacing: -2px;
+    }
+
+    .hero-description {
+      color: #d6e3d9;
+      font-size: 18px;
+      line-height: 1.8;
+      margin-top: 52px;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-width: 478px;
+      aspect-ratio: 478 / 423;
+      border-radius: 19px;
+      overflow: hidden;
+      justify-self: end;
+      background: #dce9dc;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* ================================
+       STORY SECTION
+    ================================= */
+
+    .story-section {
+      background: white;
+      padding: 60px 0 70px;
+    }
+
+    .section-heading {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1.35;
+      letter-spacing: -1.2px;
+    }
+
+    .section-description {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #829086;
+      margin-top: 12px;
+    }
+
+    .story-box {
+      margin-top: 61px;
+      width: 100%;
+      min-height: 210px;
+      padding: 60px 37px;
+      background: var(--cream);
+      border-radius: 19px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .story-box p {
+      color: #78867c;
+      font-size: 19px;
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    /* ================================
+       HAMIE SPACE
+    ================================= */
+
+    .space-section {
+      background: var(--cream);
+      padding: 61px 0 133px;
+    }
+
+    .space-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      column-gap: 34px;
+      row-gap: 40px;
+      margin-top: 31px;
+    }
+
+    .space-card {
+      min-width: 0;
+      margin: 0;
+    }
+
+    .space-card-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #dfe9dc;
+      border-radius: 19px;
+      overflow: hidden;
+    }
+
+    .space-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform .35s ease;
+    }
+
+    .space-card:hover .space-card-image img {
+      transform: scale(1.045);
+    }
+
+    .space-card:nth-child(2) .space-card-image {
+      background: #eee8dc;
+    }
+
+    .space-card:nth-child(2) img {
+      filter: sepia(.15) saturate(.78) brightness(1.045);
+    }
+
+    .space-card:nth-child(3) .space-card-image {
+      background: #dfeade;
+    }
+
+    .space-card figcaption {
+      font-size: 14px;
+      font-weight: 400;
+      color: #77877b;
+      line-height: 1.7;
+      margin: 32px 8px 0;
+    }
+
+    /* ================================
+       FOOTER
+    ================================= */
+
+    .site-footer {
+      width: 100%;
+      background: var(--footer);
+      color: white;
+      text-align: center;
+      min-height: 330px;
+      padding: 71px 20px 55px;
+    }
+
+    .footer-brand {
+      font-size: 28px;
+      line-height: 1.2;
+      font-weight: 800;
+      letter-spacing: -.7px;
+    }
+
+    .footer-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 31px;
+      margin-top: 36px;
+    }
+
+    .footer-nav a {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #e9e9e9;
+      transition: color .2s ease;
+    }
+
+    .footer-nav a:hover {
+      color: #b7d5b0;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      align-items: center;
+      margin-top: 35px;
+    }
+
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 33px;
+      height: 33px;
+      border: 1.5px solid #9dbc94;
+      border-radius: 50%;
+      color: #b5d6aa;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .social-icon.zalo {
+      font-size: 10px;
+      font-weight: 400;
+    }
+
+    .social-icon svg {
+      width: 21px;
+      height: 21px;
+    }
+
+    .copyright {
+      font-size: 10px;
+      color: #686868;
+      margin-top: 40px;
+      line-height: 1.7;
+    }
+
+    /* ================================
+       RESPONSIVE TABLET
+    ================================= */
+
+    @media (max-width: 1180px) {
+
+      .container {
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+
+      .header-inner {
+        gap: 18px;
+      }
+
+      .site-nav {
+        gap: 20px;
+      }
+
+      .site-nav a {
+        font-size: 11px;
+      }
+
+      .hero-inner {
+        column-gap: 35px;
+      }
+
+      .hero-title {
+        font-size: 46px;
+      }
+
+      .space-grid {
+        gap: 25px;
+      }
+
+    }
+
+    @media (max-width: 900px) {
+
+      .container {
+        padding-left: 28px;
+        padding-right: 28px;
+      }
+
+      .header-inner {
+        min-height: 77px;
+      }
+
+      .mobile-toggle {
+        display: inline-flex;
+        margin-left: auto;
+      }
+
+      .header-inner > .contact-btn {
+        display: none;
+      }
+
+      .site-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 15px 28px 25px;
+        background: var(--cream);
+        box-shadow: 0 17px 25px #09291f20;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .site-nav.open {
+        display: flex;
+      }
+
+      .site-nav a {
+        display: block;
+        font-size: 14px;
+        padding: 15px 0;
+        border-bottom: 1px solid #e6e7df;
+      }
+
+      .about-hero,
+      .hero-inner {
+        min-height: 490px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 28px;
+      }
+
+      .hero-title {
+        font-size: 38px;
+      }
+
+      .hero-label {
+        margin-bottom: 30px;
+      }
+
+      .hero-description {
+        margin-top: 29px;
+        font-size: 15px;
+      }
+
+      .section-heading {
+        font-size: 33px;
+      }
+
+      .story-section {
+        padding: 55px 0 65px;
+      }
+
+      .space-section {
+        padding: 60px 0 95px;
+      }
+
+      .space-card figcaption {
+        font-size: 12px;
+        margin-top: 20px;
+      }
+    }
+
+    /* ================================
+       RESPONSIVE MOBILE
+    ================================= */
+
+    @media (max-width: 600px) {
+
+      .container {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .header-inner {
+        min-height: 70px;
+      }
+
+      .brand {
+        min-width: auto;
+      }
+
+      .brand strong {
+        font-size: 24px;
+      }
+
+      .brand small {
+        font-size: 8px;
+      }
+
+      .about-hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding-top: 54px;
+        padding-bottom: 56px;
+        gap: 41px;
+        min-height: auto;
+      }
+
+      .hero-label {
+        font-size: 13px;
+        margin-bottom: 28px;
+      }
+
+      .hero-title {
+        font-size: 37px;
+        line-height: 1.25;
+        letter-spacing: -1.4px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+        margin-top: 28px;
+      }
+
+      .hero-image {
+        align-self: center;
+        max-width: 440px;
+        aspect-ratio: 1.14;
+      }
+
+      .story-section {
+        padding: 45px 0 55px;
+      }
+
+      .section-heading {
+        font-size: 28px;
+        letter-spacing: -.7px;
+      }
+
+      .section-description {
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      .story-box {
+        min-height: 155px;
+        margin-top: 33px;
+        padding: 31px 24px;
+        border-radius: 16px;
+      }
+
+      .story-box p {
+        font-size: 15px;
+        line-height: 1.9;
+      }
+
+      .space-section {
+        padding: 45px 0 75px;
+      }
+
+      .space-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        margin-top: 26px;
+      }
+
+      .space-card-image {
+        aspect-ratio: 1 / .88;
+        border-radius: 16px;
+      }
+
+      .space-card figcaption {
+        font-size: 14px;
+        margin-top: 17px;
+      }
+
+      .site-footer {
+        padding: 51px 20px 43px;
+        min-height: auto;
+      }
+
+      .footer-brand {
+        font-size: 26px;
+      }
+
+      .footer-nav {
+        gap: 17px 23px;
+        margin-top: 29px;
+      }
+
+      .footer-nav a {
+        font-size: 10px;
+      }
+
+      .social-links {
+        margin-top: 29px;
+      }
+
+      .copyright {
+        margin-top: 31px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================================
+       HEADER
+  ================================= -->
+
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="brand" aria-label="HAMIE - Trang chủ">
+        <strong>HAMIE</strong>
+        <small>COFFEE &amp; TEA</small>
+      </a>
+
+      <button
+        type="button"
+        class="mobile-toggle"
+        id="menuToggle"
+        aria-label="Mở menu"
+        aria-controls="siteNav"
+        aria-expanded="false"
+      >
+        <svg viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2"
+          stroke-linecap="round">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Điều hướng chính">
+        <a href="index.html">Trang chủ</a>
+        <a href="thuc-don.html">Thực đơn</a>
+        <a href="ve-hamie.html" aria-current="page">Về HAMIE</a>
+        <a href="index.html#space">Không gian</a>
+        <a href="index.html#offers">Ưu đãi</a>
+        <a href="index.html#stories">Góc HAMIE</a>
+        <a href="index.html#contact">Liên hệ</a>
+      </nav>
+
+      <a class="contact-btn" href="index.html#contact">
+        LIÊN HỆ
+      </a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================================
+         HERO - GIỚI THIỆU HAMIE
+    ================================= -->
+
+    <section class="about-hero">
+      <div class="container hero-inner">
+
+        <div class="hero-content">
+          <p class="hero-label">GIỚI THIỆU HAMIE</p>
+
+          <h1 class="hero-title">
+            Một khoảng xanh<br>
+            cho mọi cuộc hẹn
+          </h1>
+
+          <p class="hero-description">
+            Tinh hoa từ hạt, thanh tao từ lá
+          </p>
+        </div>
+
+        <div class="hero-image">
+          <img
+            src="assets/cozy-space.png"
+            alt="Minh họa góc không gian xanh và bàn ngồi bên cửa sổ tại HAMIE"
+            fetchpriority="high"
+          >
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================
+         CÂU CHUYỆN HAMIE
+    ================================= -->
+
+    <section class="story-section" id="cau-chuyen">
+      <div class="container">
+
+        <h2 class="section-heading">
+          Câu chuyện HAMIE
+        </h2>
+
+        <p class="section-description">
+          Phần câu chuyện thương hiệu cũ đã được gỡ,
+          nội dung mới chưa công bố.
+        </p>
+
+        <div class="story-box">
+          <p>
+            Một nơi để thưởng thức, trò chuyện
+            và ở lại thêm một chút.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================
+         MỘT GÓC DÀNH RIÊNG CHO BẠN
+    ================================= -->
+
+    <section class="space-section" id="khong-gian">
+      <div class="container">
+
+        <h2 class="section-heading">
+          Một góc dành riêng cho bạn
+        </h2>
+
+        <p class="section-description">
+          Nơi học tập, làm việc, trò chuyện và check-in
+          đều thật tự nhiên.
+        </p>
+
+        <div class="space-grid">
+
+          <!-- Card 01 -->
+          <figure class="space-card">
+            <div class="space-card-image">
+              <img
+                src="assets/cozy-space.png"
+                alt="Minh họa góc ngồi làm việc có ổ cắm và Wi-Fi"
+                loading="lazy"
+              >
+            </div>
+            <figcaption>
+              Wi-Fi, ổ cắm thuận tiện
+            </figcaption>
+          </figure>
+
+          <!-- Card 02 -->
+          <figure class="space-card">
+            <div class="space-card-image">
+              <img
+                src="assets/cozy-space.png"
+                alt="Minh họa không gian trong nhà mát mẻ của HAMIE"
+                loading="lazy"
+              >
+            </div>
+            <figcaption>
+              Không gian thoáng, máy lạnh mát
+            </figcaption>
+          </figure>
+
+          <!-- Card 03 -->
+          <figure class="space-card">
+            <div class="space-card-image">
+              <img
+                src="assets/cozy-space.png"
+                alt="Minh họa góc check-in bên cửa sổ tại HAMIE"
+                loading="lazy"
+              >
+            </div>
+            <figcaption>
+              Nhiều góc trong nhà, ngoài trời
+            </figcaption>
+          </figure>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================
+       FOOTER
+  ================================= -->
+
+  <footer class="site-footer">
+
+    <h2 class="footer-brand">HAMIE</h2>
+
+    <nav class="footer-nav" aria-label="Điều hướng cuối trang">
+      <a href="index.html">TRANG CHỦ</a>
+      <a href="thuc-don.html">THỰC ĐƠN</a>
+      <a href="ve-hamie.html">VỀ HAMIE</a>
+      <a href="index.html#space">KHÔNG GIAN</a>
+      <a href="index.html#offers">ƯU ĐÃI</a>
+      <a href="index.html#stories">GÓC HAMIE</a>
+      <a href="index.html#contact">LIÊN HỆ</a>
+    </nav>
+
+    <div class="social-links" aria-label="Các kênh của HAMIE">
+      <span class="social-icon" title="Facebook">
+        f
+      </span>
+
+      <span class="social-icon zalo" title="Zalo">
+        Zalo
+      </span>
+
+      <span class="social-icon" title="Website">
+        <svg viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.5"
+          aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M3 12h18"/>
+          <path d="M12 3c5 5 5 13 0 18"/>
+          <path d="M12 3c-5 5-5 13 0 18"/>
+        </svg>
+      </span>
+    </div>
+
+    <p class="copyright">
+      © 2026 HAMIE Coffee &amp; Tea. All rights reserved.
+    </p>
+
+  </footer>
+
+  <!-- ================================
+       JAVASCRIPT - MOBILE NAVIGATION
+  ================================= -->
+
+  <script>
+    const menuToggle = document.querySelector('#menuToggle');
+    const siteNav = document.querySelector('#siteNav');
+
+    function closeMenu() {
+      siteNav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Mở menu');
+    }
+
+    menuToggle.addEventListener('click', function () {
+      const isOpen = siteNav.classList.toggle('open');
+
+      menuToggle.setAttribute(
+        'aria-expanded',
+        String(isOpen)
+      );
+
+      menuToggle.setAttribute(
+        'aria-label',
+        isOpen ? 'Đóng menu' : 'Mở menu'
+      );
+    });
+
+    siteNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('click', function (event) {
+      if (
+        !siteNav.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
+        closeMenu();
+      }
+    });
+  </script>
+
+</body>
+</html>

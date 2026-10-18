@@ -1,0 +1,1555 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09291f">
+  <meta name="description" content="Khám phá không gian HAMIE Coffee & Tea. Một góc nhỏ, vô vàn cảm hứng.">
+  <title>Không gian | HAMIE Coffee & Tea</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #113d32;
+      --dark: #09291f;
+      --cream: #faf6ec;
+      --white: #ffffff;
+      --muted: #829086;
+      --gold: #dfc186;
+      --light-green: #dce9dc;
+      --footer: #101010;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', Arial, sans-serif;
+      background: var(--cream);
+      color: var(--green);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      font: inherit;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    /* ============================
+       HEADER
+    ============================ */
+
+    .site-header {
+      background: var(--cream);
+      position: relative;
+      z-index: 100;
+    }
+
+    .header-inner {
+      min-height: 94px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      min-width: 145px;
+      line-height: 1;
+    }
+
+    .brand strong {
+      font-size: 28px;
+      letter-spacing: -1px;
+      font-weight: 800;
+    }
+
+    .brand small {
+      font-size: 9px;
+      font-weight: 700;
+      margin-top: 7px;
+    }
+
+    .site-nav {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 38px;
+    }
+
+    .site-nav a {
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: color .2s;
+    }
+
+    .site-nav a:hover,
+    .site-nav a[aria-current="page"] {
+      color: #69947a;
+    }
+
+    .contact-btn {
+      min-width: 118px;
+      min-height: 45px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50px;
+      background: #194a3a;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .contact-btn:hover {
+      background: #0b3025;
+      transform: translateY(-2px);
+    }
+
+    .mobile-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: var(--green);
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-toggle svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    /* ============================
+       HERO BANNER
+    ============================ */
+
+    .space-hero {
+      background: var(--dark);
+      min-height: 352px;
+      color: white;
+    }
+
+    .hero-inner {
+      padding-top: 78px;
+      padding-bottom: 75px;
+    }
+
+    .hero-title {
+      font-size: 50px;
+      line-height: 1.2;
+      font-weight: 800;
+      letter-spacing: -1.7px;
+      text-transform: uppercase;
+    }
+
+    .hero-subtitle {
+      font-size: 21px;
+      line-height: 1.6;
+      color: #d6e3d9;
+      margin-top: 29px;
+    }
+
+    .hero-description {
+      font-size: 14px;
+      color: #dfc186;
+      line-height: 1.8;
+      margin-top: 35px;
+    }
+
+    /* ============================
+       MAIN SPACE SECTION
+    ============================ */
+
+    .space-section {
+      padding-top: 51px;
+      padding-bottom: 70px;
+      background: var(--cream);
+    }
+
+    .section-title {
+      font-size: 37px;
+      font-weight: 800;
+      line-height: 1.35;
+      letter-spacing: -1.2px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-top: 11px;
+    }
+
+    /* FILTER BUTTONS */
+
+    .filter-tabs {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .filter-btn {
+      min-width: 155px;
+      height: 41px;
+      padding: 0 23px;
+      border-radius: 50px;
+      background: white;
+      color: var(--green);
+      border: 1px solid #c8d9cc;
+      font-size: 11px;
+      font-weight: 700;
+      transition: .25s ease;
+    }
+
+    .filter-btn:first-child {
+      min-width: 112px;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--green);
+      background: #e9f0e5;
+    }
+
+    .filter-btn.active {
+      background: var(--green);
+      color: white;
+      border-color: var(--green);
+    }
+
+    /* ============================
+       FEATURED SPACE SLIDER
+    ============================ */
+
+    .slider-wrapper {
+      position: relative;
+      margin-top: 47px;
+      padding: 0 68px;
+    }
+
+    .featured-space {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      min-height: 445px;
+      width: 100%;
+      border-radius: 19px;
+      overflow: hidden;
+      background: var(--light-green);
+    }
+
+    .featured-image {
+      width: 100%;
+      height: 445px;
+      overflow: hidden;
+      background: #dce9dc;
+    }
+
+    .featured-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: opacity .2s ease;
+    }
+
+    .featured-content {
+      background: var(--dark);
+      color: white;
+      padding: 27px 33px 43px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .featured-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: #cbb775;
+      letter-spacing: .15px;
+      margin-bottom: 33px;
+    }
+
+    .featured-title {
+      font-size: 25px;
+      font-weight: 800;
+      line-height: 1.5;
+      letter-spacing: -.6px;
+    }
+
+    .featured-description {
+      font-size: 13px;
+      color: #bfd1c6;
+      line-height: 1.9;
+      margin-top: 54px;
+      max-width: 350px;
+    }
+
+    .view-image-btn {
+      min-width: 201px;
+      height: 45px;
+      margin-top: auto;
+      background: var(--cream);
+      color: var(--green);
+      border: none;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 800;
+      transition: .2s;
+    }
+
+    .view-image-btn:hover {
+      background: #d8e6d6;
+      transform: translateY(-2px);
+    }
+
+    /* SLIDER ARROWS */
+
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      width: 49px;
+      height: 49px;
+      border-radius: 50%;
+      border: 0;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 4px 12px #00000012;
+      transition: transform .2s, background .2s;
+    }
+
+    .slider-arrow:hover {
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .slider-arrow svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .arrow-prev {
+      left: 0;
+      background: var(--green);
+      color: white;
+    }
+
+    .arrow-next {
+      right: 0;
+      background: #ead6ad;
+      color: var(--green);
+    }
+
+    /* ============================
+       IMAGE GALLERY
+    ============================ */
+
+    .space-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 17px;
+    }
+
+    .gallery-card {
+      min-width: 0;
+      display: block;
+      border: 1px solid transparent;
+      background: var(--cream);
+      border-radius: 18px;
+      overflow: hidden;
+      text-align: left;
+      padding: 0;
+      color: var(--green);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .gallery-card[hidden] {
+      display: none;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px #09291f12;
+    }
+
+    .gallery-card.selected {
+      border-color: #c9ddca;
+    }
+
+    .gallery-image {
+      width: 100%;
+      aspect-ratio: 1 / .95;
+      border-radius: 17px 17px 0 0;
+      overflow: hidden;
+      background: #a7c5ab;
+    }
+
+    .gallery-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform .3s ease;
+    }
+
+    .gallery-card:hover .gallery-image img {
+      transform: scale(1.045);
+    }
+
+    .gallery-caption {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      padding: 18px 20px;
+      background: var(--cream);
+      color: var(--green);
+      font-size: 16px;
+      line-height: 1.5;
+      font-weight: 700;
+    }
+
+    /* ============================
+       IMAGE LIGHTBOX
+    ============================ */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 65px 25px;
+      background: rgba(4, 19, 14, .92);
+    }
+
+    .lightbox[hidden] {
+      display: none;
+    }
+
+    .lightbox-inner {
+      max-width: 960px;
+      width: 100%;
+      position: relative;
+      text-align: center;
+    }
+
+    .lightbox-image {
+      display: block;
+      max-height: 75vh;
+      width: 100%;
+      object-fit: contain;
+      border-radius: 14px;
+      background: #dce9dc;
+    }
+
+    .lightbox-caption {
+      color: white;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-top: 20px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 16px;
+      right: 22px;
+      background: white;
+      color: var(--dark);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 0;
+      display: grid;
+      place-items: center;
+      font-size: 26px;
+      z-index: 2;
+    }
+
+    /* ============================
+       FOOTER
+    ============================ */
+
+    .site-footer {
+      background: var(--footer);
+      min-height: 330px;
+      padding: 70px 20px 55px;
+      color: white;
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -.7px;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 29px;
+      margin-top: 36px;
+    }
+
+    .footer-nav a {
+      font-size: 10px;
+      color: #e8e8e8;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+
+    .footer-nav a:hover {
+      color: #b7d5b0;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-top: 35px;
+    }
+
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 33px;
+      height: 33px;
+      border: 1.5px solid #9dbc94;
+      border-radius: 50%;
+      color: #b5d6aa;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .social-icon.zalo {
+      font-size: 10px;
+      font-weight: 400;
+    }
+
+    .social-icon svg {
+      width: 21px;
+      height: 21px;
+    }
+
+    .copyright {
+      font-size: 10px;
+      color: #686868;
+      margin-top: 40px;
+      line-height: 1.7;
+    }
+
+    /* ============================
+       RESPONSIVE TABLET
+    ============================ */
+
+    @media (max-width: 1180px) {
+
+      .container {
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+
+      .header-inner {
+        gap: 18px;
+      }
+
+      .site-nav {
+        gap: 20px;
+      }
+
+      .site-nav a {
+        font-size: 11px;
+      }
+
+      .featured-space {
+        grid-template-columns: 54% 46%;
+      }
+
+      .featured-content {
+        padding: 25px 25px 33px;
+      }
+
+      .featured-title {
+        font-size: 22px;
+      }
+
+      .slider-wrapper {
+        padding: 0 55px;
+      }
+
+      .gallery-caption {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 900px) {
+
+      .container {
+        padding-left: 28px;
+        padding-right: 28px;
+      }
+
+      .header-inner {
+        min-height: 77px;
+      }
+
+      .mobile-toggle {
+        display: inline-flex;
+        margin-left: auto;
+      }
+
+      .header-inner > .contact-btn {
+        display: none;
+      }
+
+      .site-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 15px 28px 25px;
+        background: var(--cream);
+        box-shadow: 0 17px 25px #09291f20;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .site-nav.open {
+        display: flex;
+      }
+
+      .site-nav a {
+        font-size: 14px;
+        padding: 15px 0;
+        border-bottom: 1px solid #e6e7df;
+      }
+
+      .space-hero {
+        min-height: 320px;
+      }
+
+      .hero-inner {
+        padding-top: 72px;
+        padding-bottom: 65px;
+      }
+
+      .hero-title {
+        font-size: 42px;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+
+      .featured-space {
+        min-height: 345px;
+      }
+
+      .featured-image {
+        height: 345px;
+      }
+
+      .featured-content {
+        padding: 22px;
+      }
+
+      .featured-label {
+        margin-bottom: 22px;
+      }
+
+      .featured-description {
+        margin-top: 26px;
+      }
+
+      .view-image-btn {
+        min-width: 170px;
+        height: 42px;
+      }
+
+      .space-gallery {
+        gap: 12px;
+      }
+    }
+
+    /* ============================
+       RESPONSIVE MOBILE
+    ============================ */
+
+    @media (max-width: 600px) {
+
+      .container {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .header-inner {
+        min-height: 70px;
+      }
+
+      .brand {
+        min-width: auto;
+      }
+
+      .brand strong {
+        font-size: 24px;
+      }
+
+      .brand small {
+        font-size: 8px;
+      }
+
+      .space-hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        padding-top: 57px;
+        padding-bottom: 59px;
+      }
+
+      .hero-title {
+        font-size: 34px;
+        line-height: 1.24;
+        letter-spacing: -1px;
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+        margin-top: 21px;
+      }
+
+      .hero-description {
+        font-size: 12px;
+        margin-top: 26px;
+      }
+
+      .space-section {
+        padding-top: 39px;
+        padding-bottom: 55px;
+      }
+
+      .section-title {
+        font-size: 28px;
+        letter-spacing: -.7px;
+      }
+
+      .section-description {
+        font-size: 13px;
+      }
+
+      .filter-tabs {
+        gap: 9px;
+        margin-top: 24px;
+      }
+
+      .filter-btn,
+      .filter-btn:first-child {
+        min-width: auto;
+        height: 36px;
+        padding: 0 15px;
+        font-size: 10px;
+      }
+
+      .slider-wrapper {
+        padding: 0;
+        margin-top: 32px;
+      }
+
+      .featured-space {
+        grid-template-columns: 1fr;
+        border-radius: 15px;
+      }
+
+      .featured-image {
+        height: auto;
+        aspect-ratio: 1.3;
+      }
+
+      .featured-content {
+        min-height: 285px;
+        padding: 25px 24px 28px;
+      }
+
+      .featured-label {
+        margin-bottom: 17px;
+      }
+
+      .featured-title {
+        font-size: 23px;
+      }
+
+      .featured-description {
+        font-size: 12px;
+        margin-top: 22px;
+        margin-bottom: 28px;
+      }
+
+      .view-image-btn {
+        height: 42px;
+        min-width: 175px;
+      }
+
+      .slider-arrow {
+        top: 25%;
+        width: 42px;
+        height: 42px;
+      }
+
+      .arrow-prev {
+        left: 10px;
+      }
+
+      .arrow-next {
+        right: 10px;
+      }
+
+      .space-gallery {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: 24px;
+      }
+
+      .gallery-image {
+        aspect-ratio: 1.3;
+      }
+
+      .gallery-caption {
+        min-height: 70px;
+        padding: 15px 17px;
+        font-size: 15px;
+      }
+
+      .site-footer {
+        min-height: auto;
+        padding: 50px 20px 42px;
+      }
+
+      .footer-brand {
+        font-size: 26px;
+      }
+
+      .footer-nav {
+        gap: 17px 22px;
+        margin-top: 30px;
+      }
+
+      .social-links {
+        margin-top: 30px;
+      }
+
+      .copyright {
+        margin-top: 33px;
+      }
+
+      .lightbox {
+        padding: 70px 15px;
+      }
+
+      .lightbox-close {
+        top: 15px;
+        right: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================
+       HEADER
+  ============================ -->
+
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a class="brand" href="index.html" aria-label="HAMIE - Trang chủ">
+        <strong>HAMIE</strong>
+        <small>COFFEE &amp; TEA</small>
+      </a>
+
+      <button
+        type="button"
+        class="mobile-toggle"
+        id="menuToggle"
+        aria-label="Mở menu"
+        aria-controls="siteNav"
+        aria-expanded="false"
+      >
+        <svg viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2"
+          stroke-linecap="round">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Điều hướng chính">
+        <a href="index.html">Trang chủ</a>
+        <a href="thuc-don.html">Thực đơn</a>
+        <a href="ve-hamie.html">Về HAMIE</a>
+        <a href="khong-gian.html" aria-current="page">Không gian</a>
+        <a href="index.html#offers">Ưu đãi</a>
+        <a href="index.html#stories">Góc HAMIE</a>
+        <a href="index.html#contact">Liên hệ</a>
+      </nav>
+
+      <a href="index.html#contact" class="contact-btn">
+        LIÊN HỆ
+      </a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================
+         HERO BANNER
+    ============================ -->
+
+    <section class="space-hero">
+      <div class="container hero-inner">
+
+        <h1 class="hero-title">
+          KHÔNG GIAN HAMIE
+        </h1>
+
+        <p class="hero-subtitle">
+          Một góc nhỏ, vô vàn cảm hứng
+        </p>
+
+        <p class="hero-description">
+          Dành cho những cuộc hẹn và những phút giây thư thả.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ============================
+         KHÁM PHÁ KHÔNG GIAN
+    ============================ -->
+
+    <section class="space-section" id="kham-pha">
+      <div class="container">
+
+        <h2 class="section-title">
+          Khám phá từng góc của HAMIE
+        </h2>
+
+        <p class="section-description">
+          Cùng chọn chỗ ngồi bạn thích.
+        </p>
+
+        <!-- FILTER BUTTONS -->
+
+        <div class="filter-tabs" role="group" aria-label="Lọc không gian">
+
+          <button
+            type="button"
+            class="filter-btn active"
+            data-filter="all"
+            aria-pressed="true"
+          >
+            Tất cả
+          </button>
+
+          <button
+            type="button"
+            class="filter-btn"
+            data-filter="indoor"
+            aria-pressed="false"
+          >
+            Trong nhà
+          </button>
+
+          <button
+            type="button"
+            class="filter-btn"
+            data-filter="outdoor"
+            aria-pressed="false"
+          >
+            Ngoài trời
+          </button>
+
+          <button
+            type="button"
+            class="filter-btn"
+            data-filter="checkin"
+            aria-pressed="false"
+          >
+            Góc check-in
+          </button>
+
+        </div>
+
+        <!-- FEATURED SLIDER -->
+
+        <div class="slider-wrapper">
+
+          <button
+            type="button"
+            class="slider-arrow arrow-prev"
+            id="prevSlide"
+            aria-label="Không gian trước"
+          >
+            <svg viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.7"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 12H5m7-7-7 7 7 7"/>
+            </svg>
+          </button>
+
+          <div class="featured-space" aria-live="polite">
+
+            <div class="featured-image">
+              <img
+                id="featuredImg"
+                src="assets/cozy-space.png"
+                alt="Minh họa một góc không gian xanh HAMIE"
+              >
+            </div>
+
+            <div class="featured-content">
+
+              <p class="featured-label" id="featuredLabel">
+                KHÔNG GIAN HAMIE
+              </p>
+
+              <h3 class="featured-title" id="featuredTitle">
+                Không gian mát lành
+              </h3>
+
+              <p class="featured-description" id="featuredDescription">
+                Một chỗ ngồi thoải mái, để bạn ở lại lâu hơn.
+              </p>
+
+              <button
+                type="button"
+                class="view-image-btn"
+                id="viewImageBtn"
+              >
+                XEM HÌNH ẢNH
+              </button>
+
+            </div>
+
+          </div>
+
+          <button
+            type="button"
+            class="slider-arrow arrow-next"
+            id="nextSlide"
+            aria-label="Không gian tiếp theo"
+          >
+            <svg viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.7"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14m-7-7 7 7-7 7"/>
+            </svg>
+          </button>
+
+        </div>
+
+        <!-- ============================
+             GALLERY GRID
+        ============================ -->
+
+        <div class="space-gallery" id="spaceGallery">
+
+          <!-- CARD 1 -->
+          <button
+            type="button"
+            class="gallery-card selected"
+            data-id="indoor"
+            data-category="indoor"
+            aria-label="Xem không gian trong nhà"
+          >
+            <div class="gallery-image">
+              <img
+                src="assets/cozy-space.png"
+                alt="Góc không gian HAMIE trong nhà"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="gallery-caption">
+              Một góc HAMIE dành cho bạn
+            </div>
+          </button>
+
+          <!-- CARD 2 -->
+          <button
+            type="button"
+            class="gallery-card"
+            data-id="outdoor"
+            data-category="outdoor"
+            aria-label="Xem khu vực ngoài trời"
+          >
+            <div class="gallery-image">
+              <img
+                src="assets/cozy-space.png"
+                alt="Minh họa góc không gian HAMIE"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="gallery-caption">
+              Một góc HAMIE dành cho bạn
+            </div>
+          </button>
+
+          <!-- CARD 3 -->
+          <button
+            type="button"
+            class="gallery-card"
+            data-id="checkin"
+            data-category="checkin"
+            aria-label="Xem góc check-in"
+          >
+            <div class="gallery-image">
+              <img
+                src="assets/cozy-space.png"
+                alt="Minh họa góc check-in HAMIE"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="gallery-caption">
+              Một góc HAMIE dành cho bạn
+            </div>
+          </button>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================
+       FOOTER
+  ============================ -->
+
+  <footer class="site-footer">
+
+    <h2 class="footer-brand">HAMIE</h2>
+
+    <nav class="footer-nav" aria-label="Điều hướng cuối trang">
+      <a href="index.html">TRANG CHỦ</a>
+      <a href="thuc-don.html">THỰC ĐƠN</a>
+      <a href="ve-hamie.html">VỀ HAMIE</a>
+      <a href="khong-gian.html">KHÔNG GIAN</a>
+      <a href="index.html#offers">ƯU ĐÃI</a>
+      <a href="index.html#stories">GÓC HAMIE</a>
+      <a href="index.html#contact">LIÊN HỆ</a>
+    </nav>
+
+    <div class="social-links" aria-label="Mạng xã hội HAMIE">
+
+      <span class="social-icon" title="Facebook">f</span>
+
+      <span class="social-icon zalo" title="Zalo">Zalo</span>
+
+      <span class="social-icon" title="Website">
+        <svg viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.5"
+          aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M3 12h18"/>
+          <path d="M12 3c5 5 5 13 0 18"/>
+          <path d="M12 3c-5 5-5 13 0 18"/>
+        </svg>
+      </span>
+
+    </div>
+
+    <p class="copyright">
+      © 2026 HAMIE Coffee &amp; Tea. All rights reserved.
+    </p>
+
+  </footer>
+
+  <!-- ============================
+       IMAGE LIGHTBOX
+  ============================ -->
+
+  <div
+    class="lightbox"
+    id="imageLightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="lightboxCaption"
+    hidden
+  >
+
+    <button
+      type="button"
+      class="lightbox-close"
+      id="closeLightbox"
+      aria-label="Đóng hình ảnh"
+    >
+      &times;
+    </button>
+
+    <div class="lightbox-inner">
+      <img
+        class="lightbox-image"
+        id="lightboxImg"
+        src="assets/cozy-space.png"
+        alt="Hình ảnh không gian HAMIE"
+      >
+
+      <p class="lightbox-caption" id="lightboxCaption">
+        Không gian HAMIE
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ============================
+       JAVASCRIPT
+  ============================ -->
+
+  <script>
+    /* MOBILE MENU */
+
+    const menuToggle = document.getElementById('menuToggle');
+    const siteNav = document.getElementById('siteNav');
+
+    function closeMobileMenu() {
+      siteNav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Mở menu');
+    }
+
+    menuToggle.addEventListener('click', function () {
+      const opened = siteNav.classList.toggle('open');
+
+      menuToggle.setAttribute('aria-expanded', String(opened));
+      menuToggle.setAttribute(
+        'aria-label',
+        opened ? 'Đóng menu' : 'Mở menu'
+      );
+    });
+
+    siteNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    document.addEventListener('click', function (event) {
+      if (
+        !siteNav.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
+        closeMobileMenu();
+      }
+    });
+
+    /* SPACE DATA
+       Hiện dùng cùng một hình minh họa từ Figma.
+       Có thể thay image bằng ảnh thực tế sau này.
+    */
+
+    const spaces = [
+      {
+        id: 'indoor',
+        category: 'indoor',
+        label: 'KHÔNG GIAN HAMIE',
+        title: 'Không gian mát lành',
+        description: 'Một chỗ ngồi thoải mái, để bạn ở lại lâu hơn.',
+        image: 'assets/cozy-space.png'
+      },
+      {
+        id: 'outdoor',
+        category: 'outdoor',
+        label: 'KHÔNG GIAN HAMIE',
+        title: 'Một góc HAMIE dành cho bạn',
+        description: 'Dành cho những cuộc hẹn và những phút giây thư thả.',
+        image: 'assets/cozy-space.png'
+      },
+      {
+        id: 'checkin',
+        category: 'checkin',
+        label: 'KHÔNG GIAN HAMIE',
+        title: 'Góc check-in HAMIE',
+        description: 'Một góc nhỏ, vô vàn cảm hứng.',
+        image: 'assets/cozy-space.png'
+      }
+    ];
+
+    let activeFilter = 'all';
+    let currentSpaceId = 'indoor';
+
+    const featuredImg = document.getElementById('featuredImg');
+    const featuredLabel = document.getElementById('featuredLabel');
+    const featuredTitle = document.getElementById('featuredTitle');
+    const featuredDescription = document.getElementById('featuredDescription');
+
+    const galleryCards = [
+      ...document.querySelectorAll('.gallery-card')
+    ];
+
+    const filterButtons = [
+      ...document.querySelectorAll('.filter-btn')
+    ];
+
+    const prevSlide = document.getElementById('prevSlide');
+    const nextSlide = document.getElementById('nextSlide');
+
+    function getFilteredSpaces() {
+      return spaces.filter(function (space) {
+        return activeFilter === 'all' ||
+          space.category === activeFilter;
+      });
+    }
+
+    function renderSpace() {
+      const space = spaces.find(function (item) {
+        return item.id === currentSpaceId;
+      });
+
+      if (!space) return;
+
+      featuredImg.src = space.image;
+      featuredImg.alt = 'Minh họa ' + space.title;
+      featuredLabel.textContent = space.label;
+      featuredTitle.textContent = space.title;
+      featuredDescription.textContent = space.description;
+
+      galleryCards.forEach(function (card) {
+        const visible =
+          activeFilter === 'all' ||
+          card.dataset.category === activeFilter;
+
+        card.hidden = !visible;
+        card.classList.toggle(
+          'selected',
+          card.dataset.id === currentSpaceId
+        );
+        card.setAttribute(
+          'aria-pressed',
+          String(card.dataset.id === currentSpaceId)
+        );
+      });
+
+      const filtered = getFilteredSpaces();
+      prevSlide.disabled = filtered.length <= 1;
+      nextSlide.disabled = filtered.length <= 1;
+
+      prevSlide.style.opacity = filtered.length <= 1 ? '.45' : '1';
+      nextSlide.style.opacity = filtered.length <= 1 ? '.45' : '1';
+    }
+
+    /* FILTER CATEGORIES */
+
+    filterButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        activeFilter = button.dataset.filter;
+
+        filterButtons.forEach(function (btn) {
+          const active = btn === button;
+          btn.classList.toggle('active', active);
+          btn.setAttribute('aria-pressed', String(active));
+        });
+
+        const filtered = getFilteredSpaces();
+
+        if (!filtered.some(space => space.id === currentSpaceId)) {
+          currentSpaceId = filtered[0].id;
+        }
+
+        renderSpace();
+      });
+    });
+
+    /* SLIDER NAVIGATION */
+
+    function changeSlide(direction) {
+      const filtered = getFilteredSpaces();
+
+      if (filtered.length <= 1) return;
+
+      let index = filtered.findIndex(function (space) {
+        return space.id === currentSpaceId;
+      });
+
+      index = (index + direction + filtered.length) % filtered.length;
+      currentSpaceId = filtered[index].id;
+
+      renderSpace();
+    }
+
+    prevSlide.addEventListener('click', function () {
+      changeSlide(-1);
+    });
+
+    nextSlide.addEventListener('click', function () {
+      changeSlide(1);
+    });
+
+    /* CLICK GALLERY CARD */
+
+    galleryCards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        currentSpaceId = card.dataset.id;
+        renderSpace();
+
+        document.querySelector('.slider-wrapper')
+          .scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+      });
+    });
+
+    /* IMAGE LIGHTBOX */
+
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const openLightboxBtn = document.getElementById('viewImageBtn');
+    const closeLightboxBtn = document.getElementById('closeLightbox');
+
+    let previousFocus = null;
+
+    function openLightbox() {
+      const space = spaces.find(function (item) {
+        return item.id === currentSpaceId;
+      });
+
+      if (!space) return;
+
+      previousFocus = document.activeElement;
+      lightboxImg.src = space.image;
+      lightboxImg.alt = 'Minh họa ' + space.title;
+      lightboxCaption.textContent = space.title;
+
+      lightbox.hidden = false;
+      document.body.classList.add('modal-open');
+      closeLightboxBtn.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.hidden = true;
+      document.body.classList.remove('modal-open');
+
+      if (previousFocus && previousFocus.focus) {
+        previousFocus.focus();
+      }
+    }
+
+    openLightboxBtn.addEventListener('click', openLightbox);
+    closeLightboxBtn.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', function (event) {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        if (!lightbox.hidden) {
+          closeLightbox();
+        } else {
+          closeMobileMenu();
+        }
+      }
+
+      if (!lightbox.hidden) {
+        if (event.key === 'Tab') {
+          event.preventDefault();
+          closeLightboxBtn.focus();
+        }
+
+        return;
+      }
+
+      // Chuyển slide bằng phím mũi tên khi đang
+      // tương tác với khu vực slider.
+      const slider = document.querySelector('.slider-wrapper');
+
+      if (slider.contains(document.activeElement)) {
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          changeSlide(-1);
+        }
+
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          changeSlide(1);
+        }
+      }
+    });
+
+    renderSpace();
+  </script>
+
+</body>
+</html>
