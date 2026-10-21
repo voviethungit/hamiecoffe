@@ -1,0 +1,1583 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09291f">
+  <meta name="description" content="Liên hệ HAMIE Coffee & Tea, 44 Lê Trung Đình, Ngũ Hành Sơn, Đà Nẵng.">
+  <title>Liên hệ & Chỉ đường | HAMIE Coffee & Tea</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #113d32;
+      --dark: #09291f;
+      --cream: #faf6ec;
+      --white: #ffffff;
+      --muted: #829086;
+      --gold: #dfc186;
+      --soft-green: #dce9dc;
+      --input-bg: #f2f5ef;
+      --footer: #101010;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Be Vietnam Pro', Arial, sans-serif;
+      color: var(--green);
+      background: var(--cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button, input, textarea {
+      font: inherit;
+    }
+
+    button { cursor: pointer; }
+    [hidden] { display: none !important; }
+
+    .container {
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    /* ============================
+       HEADER
+    ============================ */
+
+    .site-header {
+      background: var(--cream);
+      position: relative;
+      z-index: 100;
+    }
+
+    .header-inner {
+      min-height: 94px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      min-width: 145px;
+      line-height: 1;
+    }
+
+    .brand strong {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .brand small {
+      margin-top: 7px;
+      font-size: 9px;
+      font-weight: 700;
+    }
+
+    .site-nav {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 38px;
+    }
+
+    .site-nav a {
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: color .2s;
+    }
+
+    .site-nav a:hover,
+    .site-nav a[aria-current="page"] {
+      color: #69947a;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 118px;
+      min-height: 45px;
+      padding: 0 19px;
+      background: #194a3a;
+      color: white;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .contact-btn:hover {
+      background: #0b3025;
+      transform: translateY(-2px);
+    }
+
+    .mobile-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      background: transparent;
+      border: 0;
+      color: var(--green);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-toggle svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    /* ============================
+       HERO BANNER
+    ============================ */
+
+    .contact-hero {
+      background: var(--dark);
+      color: white;
+      min-height: 347px;
+    }
+
+    .hero-inner {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    .hero-title {
+      font-size: 46px;
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: -1.5px;
+    }
+
+    .hero-description {
+      font-size: 19px;
+      font-weight: 400;
+      line-height: 1.8;
+      color: #dae5dd;
+      margin-top: 29px;
+    }
+
+    /* ============================
+       COMMON SECTIONS
+    ============================ */
+
+    .section-title {
+      font-size: 37px;
+      line-height: 1.35;
+      letter-spacing: -1.1px;
+      font-weight: 800;
+    }
+
+    .section-description {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+      margin-top: 11px;
+    }
+
+    /* ============================
+       VISIT HAMIE SECTION
+    ============================ */
+
+    .visit-section {
+      padding-top: 58px;
+      padding-bottom: 55px;
+    }
+
+    .visit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.06fr;
+      gap: 34px;
+      margin-top: 61px;
+    }
+
+    /* ADDRESS CARD */
+
+    .address-card {
+      background: white;
+      border-radius: 19px;
+      padding: 26px;
+      min-height: 385px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .address-card h3 {
+      font-size: 21px;
+      line-height: 1.4;
+      font-weight: 800;
+    }
+
+    .address-text {
+      margin-top: 51px;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .opening-hours {
+      color: #829086;
+      font-size: 13px;
+      margin-top: 41px;
+      line-height: 1.7;
+    }
+
+    .directions-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 164px;
+      min-height: 44px;
+      padding: 0 25px;
+      margin-top: auto;
+      border: none;
+      border-radius: 50px;
+      background: var(--green);
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      transition: .2s;
+    }
+
+    .directions-btn:hover {
+      background: #28644e;
+      transform: translateY(-2px);
+    }
+
+    /* GOOGLE MAP PLACEHOLDER */
+
+    .map-card {
+      min-height: 385px;
+      background: var(--soft-green);
+      border-radius: 18px;
+      padding: 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .map-card h3 {
+      font-size: 25px;
+      line-height: 1.4;
+      font-weight: 800;
+    }
+
+    .map-card p {
+      font-size: 13px;
+      color: #829086;
+      line-height: 1.8;
+      margin-top: 22px;
+    }
+
+    /* ============================
+       CONTACT FORM SECTION
+    ============================ */
+
+    .message-section {
+      padding-top: 58px;
+      padding-bottom: 43px;
+      background: var(--cream);
+    }
+
+    .message-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      align-items: start;
+      gap: 38px;
+      margin-top: 62px;
+    }
+
+    /* FORM CARD */
+
+    .form-card {
+      background: white;
+      border-radius: 20px;
+      padding: 29px 28px 40px;
+      min-height: 795px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-form {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .form-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .form-group label {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      border: 1px solid transparent;
+      background: var(--input-bg);
+      border-radius: 8px;
+      color: var(--green);
+      outline: none;
+      font-size: 14px;
+      transition: background .2s, border-color .2s;
+    }
+
+    .form-group input {
+      height: 57px;
+      padding: 0 17px;
+    }
+
+    .form-group textarea {
+      height: 148px;
+      padding: 17px;
+      resize: vertical;
+      min-height: 120px;
+      line-height: 1.7;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      background: #f7faf5;
+      border-color: #6b9c7f;
+    }
+
+    /* CHECKBOX */
+
+    .privacy-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      margin-top: 48px;
+    }
+
+    .privacy-row input {
+      margin-top: 3px;
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+      cursor: pointer;
+      accent-color: var(--green);
+    }
+
+    .privacy-row label {
+      color: #89958c;
+      font-size: 12px;
+      line-height: 1.8;
+      cursor: pointer;
+    }
+
+    /* SUBMIT BUTTON */
+
+    .form-bottom {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 17px;
+      padding-top: 35px;
+    }
+
+    .submit-btn {
+      min-width: 165px;
+      height: 44px;
+      padding: 0 25px;
+      border-radius: 50px;
+      border: 0;
+      background: var(--green);
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      transition: .2s;
+    }
+
+    .submit-btn:hover {
+      background: #28644e;
+      transform: translateY(-2px);
+    }
+
+    .submit-btn:disabled {
+      opacity: .6;
+      cursor: wait;
+    }
+
+    .form-feedback {
+      width: 100%;
+      color: #91552e;
+      font-size: 12px;
+      line-height: 1.7;
+      text-align: left;
+    }
+
+    .form-feedback.success {
+      color: #23744d;
+    }
+
+    /* ============================
+       CONNECT WITH HAMIE
+    ============================ */
+
+    .connect-card {
+      min-height: 608px;
+      background: var(--soft-green);
+      border-radius: 20px;
+      padding: 34px 23px;
+    }
+
+    .connect-card h3 {
+      font-size: 21px;
+      font-weight: 800;
+      line-height: 1.5;
+      margin-bottom: 32px;
+    }
+
+    .connect-links {
+      display: flex;
+      flex-direction: column;
+      gap: 33px;
+    }
+
+    .connect-link {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      min-height: 76px;
+      padding: 0 19px;
+      background: white;
+      border-radius: 10px;
+      border: 0;
+      color: var(--green);
+      text-align: left;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .connect-link:hover {
+      background: #f6f9f3;
+      transform: translateX(4px);
+    }
+
+    .connect-feedback {
+      margin-top: 18px;
+      font-size: 12px;
+      line-height: 1.8;
+      color: #647d6b;
+    }
+
+    /* ============================
+       FOOTER
+    ============================ */
+
+    .site-footer {
+      background: #101010;
+      color: white;
+      text-align: center;
+      padding: 70px 20px 55px;
+      min-height: 330px;
+    }
+
+    .footer-brand {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -.7px;
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 29px;
+      margin-top: 36px;
+    }
+
+    .footer-nav a {
+      color: #e8e8e8;
+      font-size: 10px;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+
+    .footer-nav a:hover {
+      color: #b7d5b0;
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 35px;
+    }
+
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 33px;
+      height: 33px;
+      border: 1.5px solid #9dbc94;
+      border-radius: 50%;
+      color: #b5d6aa;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .social-icon.zalo {
+      font-size: 10px;
+      font-weight: 400;
+    }
+
+    .social-icon svg {
+      width: 21px;
+      height: 21px;
+    }
+
+    .copyright {
+      color: #686868;
+      font-size: 10px;
+      line-height: 1.7;
+      margin-top: 40px;
+    }
+
+    /* ============================
+       TABLET RESPONSIVE
+    ============================ */
+
+    @media (max-width: 1180px) {
+
+      .container {
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+
+      .header-inner { gap: 18px; }
+      .site-nav { gap: 20px; }
+      .site-nav a { font-size: 11px; }
+
+      .message-grid {
+        grid-template-columns: 1.65fr 1fr;
+        gap: 23px;
+      }
+
+      .connect-card {
+        padding: 27px 18px;
+      }
+
+      .connect-card h3 {
+        font-size: 19px;
+      }
+
+      .connect-links { gap: 20px; }
+
+      .connect-link {
+        font-size: 12px;
+        padding: 0 15px;
+      }
+    }
+
+    @media (max-width: 900px) {
+
+      .container {
+        padding-left: 28px;
+        padding-right: 28px;
+      }
+
+      .header-inner { min-height: 77px; }
+
+      .mobile-toggle {
+        display: inline-flex;
+        margin-left: auto;
+      }
+
+      .header-inner > .contact-btn {
+        display: none;
+      }
+
+      .site-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 15px 28px 25px;
+        background: var(--cream);
+        box-shadow: 0 17px 25px #09291f20;
+      }
+
+      .site-nav.open {
+        display: flex;
+      }
+
+      .site-nav a {
+        font-size: 14px;
+        padding: 15px 0;
+        border-bottom: 1px solid #e6e7df;
+      }
+
+      .contact-hero {
+        min-height: 300px;
+      }
+
+      .hero-inner {
+        padding-top: 75px;
+        padding-bottom: 70px;
+      }
+
+      .hero-title { font-size: 40px; }
+      .section-title { font-size: 32px; }
+
+      .visit-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 21px;
+        margin-top: 40px;
+      }
+
+      .address-card,
+      .map-card {
+        min-height: 340px;
+      }
+
+      .address-card { padding: 23px; }
+      .address-text { font-size: 15px; }
+      .map-card { padding: 25px; }
+      .map-card h3 { font-size: 21px; }
+
+      .message-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-top: 39px;
+      }
+
+      .form-card {
+        min-height: auto;
+      }
+
+      .form-bottom {
+        margin-top: 35px;
+      }
+
+      .connect-card {
+        min-height: auto;
+      }
+
+      .connect-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .connect-link {
+        min-height: 63px;
+      }
+    }
+
+    /* ============================
+       MOBILE RESPONSIVE
+    ============================ */
+
+    @media (max-width: 600px) {
+
+      .container {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .header-inner { min-height: 70px; }
+
+      .brand { min-width: auto; }
+      .brand strong { font-size: 24px; }
+      .brand small { font-size: 8px; }
+
+      .contact-hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        padding-top: 58px;
+        padding-bottom: 59px;
+      }
+
+      .hero-title {
+        font-size: 34px;
+        line-height: 1.3;
+        letter-spacing: -1px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+        margin-top: 22px;
+      }
+
+      .section-title {
+        font-size: 28px;
+        letter-spacing: -.7px;
+      }
+
+      .section-description {
+        font-size: 12px;
+      }
+
+      .visit-section {
+        padding-top: 42px;
+        padding-bottom: 35px;
+      }
+
+      .visit-grid {
+        grid-template-columns: 1fr;
+        margin-top: 29px;
+        gap: 19px;
+      }
+
+      .address-card {
+        min-height: 335px;
+        padding: 25px;
+      }
+
+      .address-card h3 {
+        font-size: 20px;
+      }
+
+      .address-text {
+        font-size: 16px;
+        margin-top: 34px;
+      }
+
+      .opening-hours {
+        font-size: 12px;
+        margin-top: 29px;
+      }
+
+      .directions-btn {
+        min-height: 42px;
+      }
+
+      .map-card {
+        min-height: 240px;
+        padding: 30px;
+      }
+
+      .map-card h3 {
+        font-size: 22px;
+      }
+
+      .message-section {
+        padding-top: 36px;
+        padding-bottom: 53px;
+      }
+
+      .message-grid {
+        margin-top: 29px;
+      }
+
+      .form-card {
+        border-radius: 17px;
+        padding: 24px 19px 28px;
+      }
+
+      .form-fields {
+        gap: 21px;
+      }
+
+      .form-group {
+        gap: 10px;
+      }
+
+      .form-group label {
+        font-size: 12px;
+      }
+
+      .form-group input {
+        height: 53px;
+      }
+
+      .form-group textarea {
+        height: 145px;
+      }
+
+      .privacy-row {
+        margin-top: 31px;
+      }
+
+      .privacy-row label {
+        font-size: 11px;
+      }
+
+      .form-bottom {
+        margin-top: 25px;
+      }
+
+      .submit-btn {
+        min-width: 155px;
+        height: 42px;
+      }
+
+      .connect-card {
+        padding: 27px 20px 30px;
+        border-radius: 17px;
+      }
+
+      .connect-card h3 {
+        font-size: 19px;
+        margin-bottom: 22px;
+      }
+
+      .connect-links {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .connect-link {
+        min-height: 57px;
+        font-size: 13px;
+      }
+
+      .site-footer {
+        min-height: auto;
+        padding: 51px 20px 43px;
+      }
+
+      .footer-brand { font-size: 26px; }
+
+      .footer-nav {
+        gap: 17px 22px;
+        margin-top: 29px;
+      }
+
+      .social-links { margin-top: 30px; }
+      .copyright { margin-top: 32px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================
+       HEADER
+  ============================ -->
+
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="brand" aria-label="HAMIE - Trang chủ">
+        <strong>HAMIE</strong>
+        <small>COFFEE &amp; TEA</small>
+      </a>
+
+      <button
+        type="button"
+        class="mobile-toggle"
+        id="menuToggle"
+        aria-label="Mở menu"
+        aria-controls="siteNav"
+        aria-expanded="false"
+      >
+        <svg viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2"
+          stroke-linecap="round">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Điều hướng chính">
+        <a href="index.html">Trang chủ</a>
+        <a href="thuc-don.html">Thực đơn</a>
+        <a href="ve-hamie.html">Về HAMIE</a>
+        <a href="khong-gian.html">Không gian</a>
+        <a href="uu-dai.html">Ưu đãi</a>
+        <a href="goc-hamie.html">Góc HAMIE</a>
+        <a href="lien-he.html" aria-current="page">Liên hệ</a>
+      </nav>
+
+      <a href="lien-he.html" class="contact-btn">
+        LIÊN HỆ
+      </a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================
+         HERO
+    ============================ -->
+
+    <section class="contact-hero">
+      <div class="container hero-inner">
+
+        <h1 class="hero-title">
+          Liên hệ với HAMIE
+        </h1>
+
+        <p class="hero-description">
+          Chúng mình luôn sẵn sàng chào đón bạn.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ============================
+         ADDRESS AND DIRECTIONS
+    ============================ -->
+
+    <section class="visit-section" id="dia-chi">
+      <div class="container">
+
+        <h2 class="section-title">
+          Ghé quán nhé!
+        </h2>
+
+        <p class="section-description">
+          Địa chỉ, giờ mở cửa và các kênh liên hệ.
+        </p>
+
+        <div class="visit-grid">
+
+          <!-- ADDRESS CARD -->
+
+          <article class="address-card">
+
+            <h3>
+              HAMIE COFFEE &amp; TEA
+            </h3>
+
+            <p class="address-text">
+              44 Lê Trung Đình,<br>
+              Ngũ Hành Sơn, Đà Nẵng
+            </p>
+
+            <p class="opening-hours">
+              Hằng ngày: 06:00 – 22:00
+            </p>
+
+            <a
+              class="directions-btn"
+              id="directionsBtn"
+              href="https://www.google.com/maps/search/?api=1&query=44%20L%C3%AA%20Trung%20%C4%90%C3%ACnh%2C%20Ng%C5%A9%20H%C3%A0nh%20S%C6%A1n%2C%20%C4%90%C3%A0%20N%E1%BA%B5ng"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              CHỈ ĐƯỜNG
+            </a>
+
+          </article>
+
+          <!-- MAP PLACEHOLDER -->
+
+          <div class="map-card">
+
+            <h3>
+              BẢN ĐỒ GOOGLE MAPS
+            </h3>
+
+            <p>
+              Tích hợp địa điểm HAMIE khi lập trình
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================
+         CONTACT FORM
+    ============================ -->
+
+    <section class="message-section" id="nhan-tin">
+      <div class="container">
+
+        <h2 class="section-title">
+          Để lại lời nhắn cho HAMIE
+        </h2>
+
+        <p class="section-description">
+          Để lại lời nhắn, chúng mình luôn muốn lắng nghe bạn.
+        </p>
+
+        <div class="message-grid">
+
+          <!-- FORM CARD -->
+
+          <div class="form-card">
+
+            <form
+              class="contact-form"
+              id="contactForm"
+            >
+
+              <div class="form-fields">
+
+                <!-- NAME -->
+
+                <div class="form-group">
+                  <label for="fullName">
+                    Họ và tên
+                  </label>
+
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    autocomplete="name"
+                    minlength="2"
+                    maxlength="100"
+                    required
+                  >
+                </div>
+
+                <!-- EMAIL OR PHONE -->
+
+                <div class="form-group">
+                  <label for="contactInfo">
+                    Email hoặc số điện thoại
+                  </label>
+
+                  <input
+                    type="text"
+                    id="contactInfo"
+                    name="contactInfo"
+                    autocomplete="email"
+                    maxlength="150"
+                    required
+                  >
+                </div>
+
+                <!-- SUBJECT -->
+
+                <div class="form-group">
+                  <label for="subject">
+                    Chủ đề
+                  </label>
+
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    maxlength="200"
+                    required
+                  >
+                </div>
+
+                <!-- MESSAGE -->
+
+                <div class="form-group">
+                  <label for="message">
+                    Nội dung tin nhắn
+                  </label>
+
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    minlength="10"
+                    maxlength="5000"
+                    required
+                  ></textarea>
+                </div>
+
+              </div>
+
+              <!-- PRIVACY AGREEMENT -->
+
+              <div class="privacy-row">
+
+                <input
+                  type="checkbox"
+                  id="privacy"
+                  name="privacy"
+                  required
+                >
+
+                <label for="privacy">
+                  Tôi đồng ý với chính sách xử lý dữ liệu cá nhân.
+                </label>
+
+              </div>
+
+              <!-- SUBMIT -->
+
+              <div class="form-bottom">
+
+                <p
+                  class="form-feedback"
+                  id="formFeedback"
+                  role="status"
+                  aria-live="polite"
+                  hidden
+                ></p>
+
+                <button
+                  type="submit"
+                  class="submit-btn"
+                  id="submitBtn"
+                >
+                  GỬI TIN NHẮN
+                </button>
+
+              </div>
+
+            </form>
+
+          </div>
+
+          <!-- ============================
+               CONNECT WITH HAMIE
+          ============================ -->
+
+          <aside class="connect-card">
+
+            <h3>
+              Kết nối cùng HAMIE
+            </h3>
+
+            <div class="connect-links">
+
+              <button
+                type="button"
+                class="connect-link"
+                data-channel="facebook"
+              >
+                Fanpage Facebook
+              </button>
+
+              <button
+                type="button"
+                class="connect-link"
+                data-channel="zalo"
+              >
+                Zalo Official Account
+              </button>
+
+              <button
+                type="button"
+                class="connect-link"
+                data-channel="phone"
+              >
+                Gọi ngay
+              </button>
+
+              <a
+                href="thuc-don.html"
+                class="connect-link"
+              >
+                Xem thực đơn
+              </a>
+
+            </div>
+
+            <p
+              class="connect-feedback"
+              id="connectFeedback"
+              role="status"
+              aria-live="polite"
+              hidden
+            ></p>
+
+          </aside>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================
+       FOOTER
+  ============================ -->
+
+  <footer class="site-footer">
+
+    <h2 class="footer-brand">
+      HAMIE
+    </h2>
+
+    <nav class="footer-nav" aria-label="Điều hướng cuối trang">
+      <a href="index.html">TRANG CHỦ</a>
+      <a href="thuc-don.html">THỰC ĐƠN</a>
+      <a href="ve-hamie.html">VỀ HAMIE</a>
+      <a href="khong-gian.html">KHÔNG GIAN</a>
+      <a href="uu-dai.html">ƯU ĐÃI</a>
+      <a href="goc-hamie.html">GÓC HAMIE</a>
+      <a href="lien-he.html">LIÊN HỆ</a>
+    </nav>
+
+    <div class="social-links" aria-label="Mạng xã hội HAMIE">
+
+      <span class="social-icon" title="Facebook">
+        f
+      </span>
+
+      <span class="social-icon zalo" title="Zalo">
+        Zalo
+      </span>
+
+      <span class="social-icon" title="Website">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M3 12h18"/>
+          <path d="M12 3c5 5 5 13 0 18"/>
+          <path d="M12 3c-5 5-5 13 0 18"/>
+        </svg>
+      </span>
+
+    </div>
+
+    <p class="copyright">
+      © 2026 HAMIE Coffee &amp; Tea. All rights reserved.
+    </p>
+
+  </footer>
+
+  <!-- ============================
+       JAVASCRIPT
+  ============================ -->
+
+  <script>
+
+    /* ==================================
+       CONFIGURATION
+
+       Điền thông tin chính thức tại đây
+       khi website sẵn sàng hoạt động.
+    ================================== */
+
+    const HAMIE_CONFIG = {
+      address: '44 Lê Trung Đình, Ngũ Hành Sơn, Đà Nẵng',
+      facebook: '',
+      zalo: '',
+      phone: '',
+      formEndpoint: ''
+    };
+
+
+    /* ==================================
+       MOBILE NAVIGATION
+    ================================== */
+
+    const menuToggle = document.getElementById('menuToggle');
+    const siteNav = document.getElementById('siteNav');
+
+    function closeMobileMenu() {
+      siteNav.classList.remove('open');
+
+      menuToggle.setAttribute(
+        'aria-expanded',
+        'false'
+      );
+
+      menuToggle.setAttribute(
+        'aria-label',
+        'Mở menu'
+      );
+    }
+
+    menuToggle.addEventListener('click', function () {
+      const isOpen = siteNav.classList.toggle('open');
+
+      menuToggle.setAttribute(
+        'aria-expanded',
+        String(isOpen)
+      );
+
+      menuToggle.setAttribute(
+        'aria-label',
+        isOpen ? 'Đóng menu' : 'Mở menu'
+      );
+    });
+
+    siteNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    document.addEventListener('click', function (event) {
+      if (
+        !siteNav.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
+        closeMobileMenu();
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        closeMobileMenu();
+      }
+    });
+
+
+    /* ==================================
+       GOOGLE MAPS DIRECTIONS
+    ================================== */
+
+    const directionsBtn =
+      document.getElementById('directionsBtn');
+
+    const mapUrl =
+      'https://www.google.com/maps/search/?api=1&query=' +
+      encodeURIComponent(HAMIE_CONFIG.address);
+
+    directionsBtn.href = mapUrl;
+
+
+    /* ==================================
+       CONTACT CHANNELS
+    ================================== */
+
+    const connectFeedback =
+      document.getElementById('connectFeedback');
+
+    const connectButtons =
+      document.querySelectorAll('[data-channel]');
+
+    function showConnectMessage(message) {
+      connectFeedback.textContent = message;
+      connectFeedback.hidden = false;
+    }
+
+    connectButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        const channel = button.dataset.channel;
+
+        if (channel === 'facebook') {
+          if (HAMIE_CONFIG.facebook) {
+            window.open(
+              HAMIE_CONFIG.facebook,
+              '_blank',
+              'noopener,noreferrer'
+            );
+          } else {
+            showConnectMessage(
+              'Fanpage Facebook sẽ được cập nhật khi có liên kết chính thức.'
+            );
+          }
+        }
+
+        if (channel === 'zalo') {
+          if (HAMIE_CONFIG.zalo) {
+            window.open(
+              HAMIE_CONFIG.zalo,
+              '_blank',
+              'noopener,noreferrer'
+            );
+          } else {
+            showConnectMessage(
+              'Zalo Official Account hiện chưa được cấu hình.'
+            );
+          }
+        }
+
+        if (channel === 'phone') {
+          if (HAMIE_CONFIG.phone) {
+            const phone = HAMIE_CONFIG.phone.replace(
+              /[^\d+]/g,
+              ''
+            );
+
+            window.location.href = 'tel:' + phone;
+          } else {
+            showConnectMessage(
+              'Số điện thoại HAMIE sẽ được cập nhật tại đây.'
+            );
+          }
+        }
+      });
+    });
+
+
+    /* ==================================
+       CONTACT FORM
+    ================================== */
+
+    const contactForm =
+      document.getElementById('contactForm');
+
+    const contactInfo =
+      document.getElementById('contactInfo');
+
+    const formFeedback =
+      document.getElementById('formFeedback');
+
+    const submitBtn =
+      document.getElementById('submitBtn');
+
+    function showFormMessage(message, success) {
+      formFeedback.textContent = message;
+      formFeedback.hidden = false;
+      formFeedback.classList.toggle(
+        'success',
+        Boolean(success)
+      );
+    }
+
+    function isValidContact(value) {
+      const trimmed = value.trim();
+
+      const emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      const phonePattern =
+        /^(?:\+?84|0)[\d\s().-]{8,13}$/;
+
+      return (
+        emailPattern.test(trimmed) ||
+        phonePattern.test(trimmed)
+      );
+    }
+
+    contactInfo.addEventListener('input', function () {
+      contactInfo.setCustomValidity('');
+    });
+
+    contactForm.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      formFeedback.hidden = true;
+
+      if (!isValidContact(contactInfo.value)) {
+        contactInfo.setCustomValidity(
+          'Vui lòng nhập email hoặc số điện thoại hợp lệ.'
+        );
+      } else {
+        contactInfo.setCustomValidity('');
+      }
+
+      if (!contactForm.reportValidity()) {
+        return;
+      }
+
+      const formData = {
+        fullName: document.getElementById('fullName').value.trim(),
+        contactInfo: contactInfo.value.trim(),
+        subject: document.getElementById('subject').value.trim(),
+        message: document.getElementById('message').value.trim(),
+        privacyConsent: document.getElementById('privacy').checked
+      };
+
+      /*
+       * Nếu chưa cấu hình endpoint:
+       * Không gửi dữ liệu và không thông báo thành công.
+       */
+
+      if (!HAMIE_CONFIG.formEndpoint) {
+        showFormMessage(
+          'Thông tin đã được kiểm tra, nhưng tin nhắn chưa được gửi. ' +
+          'Website cần kết nối email hoặc hệ thống tiếp nhận liên hệ.',
+          false
+        );
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'ĐANG GỬI...';
+
+      try {
+        const response = await fetch(
+          HAMIE_CONFIG.formEndpoint,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error('Không thể gửi yêu cầu');
+        }
+
+        showFormMessage(
+          'Tin nhắn đã được hệ thống tiếp nhận. ' +
+          'HAMIE sẽ phản hồi bạn sớm nhất có thể!',
+          true
+        );
+
+        contactForm.reset();
+
+      } catch (error) {
+        showFormMessage(
+          'Chưa gửi được tin nhắn. ' +
+          'Vui lòng thử lại sau hoặc liên hệ HAMIE qua kênh khác.',
+          false
+        );
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'GỬI TIN NHẮN';
+      }
+    });
+
+  </script>
+
+</body>
+</html>
