@@ -1,0 +1,1361 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#113d32">
+  <meta name="description" content="Cập nhật các chương trình ưu đãi, sự kiện và thông tin mới nhất từ HAMIE Coffee & Tea.">
+  <title>Ưu đãi & Sự kiện | HAMIE Coffee & Tea</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #113d32;
+      --dark: #09291f;
+      --cream: #faf6ec;
+      --white: #ffffff;
+      --muted: #829086;
+      --gold: #dfc186;
+      --footer: #101010;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Be Vietnam Pro', Arial, sans-serif;
+      color: var(--green);
+      background: var(--cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.modal-open { overflow: hidden; }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
+    img { display: block; width: 100%; }
+
+    .container {
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    /* =============== HEADER =============== */
+
+    .site-header {
+      background: var(--cream);
+      position: relative;
+      z-index: 100;
+    }
+
+    .header-inner {
+      min-height: 94px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      min-width: 145px;
+      line-height: 1;
+    }
+
+    .brand strong {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .brand small {
+      font-size: 9px;
+      font-weight: 700;
+      margin-top: 7px;
+    }
+
+    .site-nav {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 38px;
+    }
+
+    .site-nav a {
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: color .2s;
+    }
+
+    .site-nav a:hover,
+    .site-nav a[aria-current="page"] {
+      color: #69947a;
+    }
+
+    .contact-btn {
+      min-width: 118px;
+      min-height: 45px;
+      border-radius: 50px;
+      background: #194a3a;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .contact-btn:hover {
+      background: #0b3025;
+      transform: translateY(-2px);
+    }
+
+    .mobile-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      color: var(--green);
+    }
+
+    .mobile-toggle svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    /* =============== HERO =============== */
+
+    .offers-hero {
+      background: var(--green);
+      color: white;
+      min-height: 375px;
+    }
+
+    .hero-inner {
+      padding-top: 78px;
+      padding-bottom: 73px;
+    }
+
+    .hero-title {
+      font-size: 52px;
+      line-height: 1.2;
+      font-weight: 800;
+      letter-spacing: -1.8px;
+      text-transform: uppercase;
+    }
+
+    .hero-subtitle {
+      color: #e1e9e1;
+      font-size: 19px;
+      line-height: 1.7;
+      margin-top: 30px;
+    }
+
+    .hero-description {
+      color: var(--gold);
+      font-size: 13px;
+      line-height: 1.8;
+      margin-top: 55px;
+    }
+
+    /* =============== MAIN CONTENT =============== */
+
+    .offers-section {
+      padding: 52px 0 115px;
+      background: var(--cream);
+    }
+
+    .section-title {
+      font-size: 37px;
+      font-weight: 800;
+      line-height: 1.35;
+      letter-spacing: -1.2px;
+    }
+
+    .section-description {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* =============== FILTER TABS =============== */
+
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 17px;
+      margin-top: 27px;
+    }
+
+    .filter-btn {
+      min-width: 145px;
+      height: 40px;
+      border-radius: 50px;
+      border: 1px solid #cbdccf;
+      color: var(--green);
+      background: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 0 24px;
+      transition: .2s;
+    }
+
+    .filter-btn:first-child {
+      min-width: 110px;
+    }
+
+    .filter-btn:hover {
+      background: #eaf0e7;
+      border-color: var(--green);
+    }
+
+    .filter-btn.active {
+      background: var(--green);
+      border-color: var(--green);
+      color: white;
+    }
+
+    /* =============== FEATURED OFFER =============== */
+
+    .featured-offer {
+      display: grid;
+      grid-template-columns: 48% 52%;
+      background: white;
+      padding: 16px;
+      border-radius: 19px;
+      min-height: 495px;
+      margin-top: 51px;
+      overflow: hidden;
+    }
+
+    .featured-offer[hidden] {
+      display: none;
+    }
+
+    .featured-image {
+      height: 463px;
+      border-radius: 15px;
+      overflow: hidden;
+      background: #dce9dc;
+    }
+
+    .featured-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .featured-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 39px 36px 31px 43px;
+      min-width: 0;
+    }
+
+    .featured-title {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -.8px;
+      line-height: 1.4;
+    }
+
+    .featured-status {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #77867a;
+      margin-top: 22px;
+      font-weight: 600;
+    }
+
+    .featured-description {
+      font-size: 13px;
+      line-height: 1.9;
+      margin-top: 31px;
+      color: var(--green);
+    }
+
+    .featured-actions {
+      margin-top: auto;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+      height: 32px;
+      min-width: 135px;
+      border: 1px solid #cbdccf;
+      color: var(--green);
+      border-radius: 50px;
+      background: white;
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .detail-btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 165px;
+      min-height: 39px;
+      background: var(--green);
+      color: white;
+      border: 0;
+      border-radius: 50px;
+      font-size: 10px;
+      font-weight: 800;
+      transition: .2s ease;
+    }
+
+    .detail-btn:hover {
+      background: #24634e;
+      transform: translateY(-2px);
+    }
+
+    /* =============== EVENT SECTION =============== */
+
+    .events-section {
+      margin-top: 74px;
+    }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 32px;
+      margin-top: 76px;
+    }
+
+    .event-card {
+      min-width: 0;
+      padding: 0;
+      display: block;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 16px;
+      color: var(--green);
+      overflow: hidden;
+      text-align: left;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .event-card[hidden] {
+      display: none;
+    }
+
+    .event-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 27px #09291f13;
+    }
+
+    .event-photo {
+      width: 100%;
+      aspect-ratio: 1.84 / 1;
+      overflow: hidden;
+      border-radius: 15px 15px 0 0;
+      background: #f0d4a7;
+    }
+
+    .event-photo img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform .3s;
+    }
+
+    .event-card:hover .event-photo img {
+      transform: scale(1.045);
+    }
+
+    .event-card-body {
+      padding: 17px 14px 23px;
+      min-height: 91px;
+      background: var(--cream);
+    }
+
+    .event-card-title {
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.6;
+    }
+
+    .event-card-description {
+      font-size: 11px;
+      color: #829086;
+      margin-top: 5px;
+      line-height: 1.7;
+    }
+
+    .filter-feedback {
+      margin-top: 25px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .filter-feedback:empty {
+      display: none;
+    }
+
+    /* =============== FOOTER =============== */
+
+    .site-footer {
+      background: var(--footer);
+      min-height: 330px;
+      padding: 70px 20px 55px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -.7px;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 29px;
+      margin-top: 36px;
+    }
+
+    .footer-nav a {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #e8e8e8;
+      transition: color .2s;
+    }
+
+    .footer-nav a:hover {
+      color: #b7d5b0;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      align-items: center;
+      margin-top: 35px;
+    }
+
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 33px;
+      height: 33px;
+      border: 1.5px solid #9dbc94;
+      border-radius: 50%;
+      color: #b5d6aa;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .social-icon.zalo {
+      font-size: 10px;
+      font-weight: 400;
+    }
+
+    .social-icon svg {
+      width: 21px;
+      height: 21px;
+    }
+
+    .copyright {
+      font-size: 10px;
+      color: #686868;
+      margin-top: 40px;
+      line-height: 1.7;
+    }
+
+    /* =============== DETAIL MODAL =============== */
+
+    .offer-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(4, 25, 18, .8);
+      padding: 20px;
+    }
+
+    .offer-modal[hidden] {
+      display: none;
+    }
+
+    .modal-content {
+      position: relative;
+      background: var(--cream);
+      border-radius: 20px;
+      padding: 43px;
+      width: 100%;
+      max-width: 530px;
+      color: var(--green);
+      box-shadow: 0 25px 70px #0003;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 19px;
+      border: none;
+      background: transparent;
+      font-size: 28px;
+      color: var(--green);
+      width: 37px;
+      height: 37px;
+    }
+
+    .modal-eyebrow {
+      color: #8b976e;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .modal-content h2 {
+      font-size: 28px;
+      line-height: 1.4;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .modal-content p {
+      font-size: 14px;
+      line-height: 1.9;
+      color: #728276;
+    }
+
+    .modal-content .modal-note {
+      margin-top: 20px;
+      padding: 17px 18px;
+      border-radius: 12px;
+      background: white;
+      font-size: 13px;
+    }
+
+    /* =============== TABLET =============== */
+
+    @media (max-width: 1180px) {
+      .container {
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+
+      .header-inner { gap: 18px; }
+      .site-nav { gap: 20px; }
+      .site-nav a { font-size: 11px; }
+
+      .featured-content {
+        padding: 30px 25px 25px;
+      }
+
+      .featured-title { font-size: 25px; }
+      .event-grid { gap: 23px; }
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        padding-left: 28px;
+        padding-right: 28px;
+      }
+
+      .header-inner { min-height: 77px; }
+
+      .mobile-toggle {
+        display: inline-flex;
+        margin-left: auto;
+      }
+
+      .header-inner > .contact-btn {
+        display: none;
+      }
+
+      .site-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 15px 28px 25px;
+        background: var(--cream);
+        box-shadow: 0 17px 25px #09291f20;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .site-nav.open { display: flex; }
+
+      .site-nav a {
+        font-size: 14px;
+        padding: 15px 0;
+        border-bottom: 1px solid #e6e7df;
+      }
+
+      .offers-hero { min-height: 330px; }
+
+      .hero-inner {
+        padding-top: 72px;
+        padding-bottom: 60px;
+      }
+
+      .hero-title { font-size: 42px; }
+      .section-title { font-size: 32px; }
+
+      .featured-offer {
+        min-height: 385px;
+        grid-template-columns: 48% 52%;
+      }
+
+      .featured-image { height: 350px; }
+
+      .featured-content {
+        padding: 20px 22px;
+      }
+
+      .featured-title { font-size: 23px; }
+
+      .featured-status {
+        font-size: 14px;
+        margin-top: 12px;
+      }
+
+      .featured-description {
+        font-size: 12px;
+        margin-top: 16px;
+      }
+
+      .featured-actions { gap: 13px; }
+
+      .event-grid {
+        gap: 16px;
+        margin-top: 50px;
+      }
+
+      .event-card-title { font-size: 11px; }
+      .event-card-description { font-size: 10px; }
+    }
+
+    /* =============== MOBILE =============== */
+
+    @media (max-width: 600px) {
+      .container {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .header-inner { min-height: 70px; }
+      .brand { min-width: auto; }
+      .brand strong { font-size: 24px; }
+      .brand small { font-size: 8px; }
+
+      .offers-hero { min-height: auto; }
+
+      .hero-inner {
+        padding-top: 57px;
+        padding-bottom: 58px;
+      }
+
+      .hero-title {
+        font-size: 34px;
+        letter-spacing: -1px;
+        line-height: 1.25;
+      }
+
+      .hero-subtitle {
+        font-size: 15px;
+        margin-top: 23px;
+      }
+
+      .hero-description {
+        font-size: 12px;
+        margin-top: 30px;
+      }
+
+      .offers-section {
+        padding: 39px 0 65px;
+      }
+
+      .section-title {
+        font-size: 28px;
+        letter-spacing: -.7px;
+      }
+
+      .section-description { font-size: 12px; }
+
+      .filter-tabs {
+        gap: 9px;
+        margin-top: 22px;
+      }
+
+      .filter-btn,
+      .filter-btn:first-child {
+        min-width: auto;
+        height: 36px;
+        padding: 0 18px;
+        font-size: 10px;
+      }
+
+      .featured-offer {
+        grid-template-columns: 1fr;
+        margin-top: 32px;
+        padding: 12px;
+        border-radius: 17px;
+        min-height: auto;
+      }
+
+      .featured-image {
+        height: auto;
+        aspect-ratio: 1.4;
+        border-radius: 12px;
+      }
+
+      .featured-content {
+        min-height: 285px;
+        padding: 27px 13px 16px;
+      }
+
+      .featured-title { font-size: 24px; }
+
+      .featured-status {
+        font-size: 14px;
+        margin-top: 16px;
+      }
+
+      .featured-description {
+        margin-top: 18px;
+        font-size: 12px;
+      }
+
+      .featured-actions {
+        margin-top: 31px;
+        gap: 14px;
+      }
+
+      .events-section { margin-top: 55px; }
+
+      .event-grid {
+        grid-template-columns: 1fr;
+        gap: 23px;
+        margin-top: 29px;
+      }
+
+      .event-photo { aspect-ratio: 1.7; }
+
+      .event-card-body {
+        min-height: 76px;
+        padding: 14px 15px;
+      }
+
+      .event-card-title { font-size: 13px; }
+      .event-card-description { font-size: 11px; }
+
+      .site-footer {
+        padding: 50px 20px 42px;
+        min-height: auto;
+      }
+
+      .footer-brand { font-size: 26px; }
+
+      .footer-nav {
+        gap: 17px 22px;
+        margin-top: 30px;
+      }
+
+      .social-links { margin-top: 30px; }
+      .copyright { margin-top: 33px; }
+
+      .modal-content {
+        padding: 35px 24px 30px;
+      }
+
+      .modal-content h2 { font-size: 23px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =============== HEADER =============== -->
+
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="brand" aria-label="HAMIE - Trang chủ">
+        <strong>HAMIE</strong>
+        <small>COFFEE &amp; TEA</small>
+      </a>
+
+      <button
+        type="button"
+        class="mobile-toggle"
+        id="menuToggle"
+        aria-label="Mở menu"
+        aria-controls="siteNav"
+        aria-expanded="false"
+      >
+        <svg viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2"
+          stroke-linecap="round">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Điều hướng chính">
+        <a href="index.html">Trang chủ</a>
+        <a href="thuc-don.html">Thực đơn</a>
+        <a href="ve-hamie.html">Về HAMIE</a>
+        <a href="khong-gian.html">Không gian</a>
+        <a href="uu-dai.html" aria-current="page">Ưu đãi</a>
+        <a href="index.html#stories">Góc HAMIE</a>
+        <a href="index.html#contact">Liên hệ</a>
+      </nav>
+
+      <a href="index.html#contact" class="contact-btn">
+        LIÊN HỆ
+      </a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =============== HERO =============== -->
+
+    <section class="offers-hero">
+      <div class="container hero-inner">
+
+        <h1 class="hero-title">
+          ƯU ĐÃI &amp; SỰ KIỆN
+        </h1>
+
+        <p class="hero-subtitle">
+          Mỗi lần ghé thăm, thêm một điều thú vị.
+        </p>
+
+        <p class="hero-description">
+          Chỉ công khai chương trình sau khi nội dung được chủ quán duyệt.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- =============== MAIN =============== -->
+
+    <section class="offers-section">
+      <div class="container">
+
+        <h2 class="section-title">
+          Có gì mới tại HAMIE?
+        </h2>
+
+        <p class="section-description">
+          Xem ưu đãi theo loại và thời gian diễn ra.
+        </p>
+
+        <!-- FILTER -->
+
+        <div class="filter-tabs" role="group" aria-label="Lọc ưu đãi và sự kiện">
+
+          <button
+            type="button"
+            class="filter-btn active"
+            data-filter="all"
+            aria-pressed="true"
+          >
+            Tất cả
+          </button>
+
+          <button
+            type="button"
+            class="filter-btn"
+            data-filter="offer"
+            aria-pressed="false"
+          >
+            Ưu đãi
+          </button>
+
+          <button
+            type="button"
+            class="filter-btn"
+            data-filter="event"
+            aria-pressed="false"
+          >
+            Sự kiện
+          </button>
+
+        </div>
+
+        <!-- =============== FEATURED OFFER =============== -->
+
+        <article class="featured-offer" id="featuredOffer">
+
+          <div class="featured-image">
+            <img
+              src="assets/orange-tea.png"
+              alt="Minh họa ly trà trái cây HAMIE"
+              fetchpriority="high"
+            >
+          </div>
+
+          <div class="featured-content">
+
+            <h3 class="featured-title">
+              Ưu đãi nổi bật
+            </h3>
+
+            <p class="featured-status">
+              Chưa có chương trình được xác nhận
+            </p>
+
+            <p class="featured-description">
+              Khám phá các hoạt động và thông tin mới nhất từ HAMIE.
+            </p>
+
+            <div class="featured-actions">
+
+              <span class="status-pill">
+                Chờ nội dung
+              </span>
+
+              <button
+                type="button"
+                class="detail-btn"
+                id="featuredDetailBtn"
+                data-modal-title="Ưu đãi nổi bật"
+                data-modal-type="ƯU ĐÃI / HAMIE"
+              >
+                XEM CHI TIẾT
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- =============== EVENTS GRID =============== -->
+
+        <section class="events-section" aria-labelledby="eventsHeading">
+
+          <h2 class="section-title" id="eventsHeading">
+            Các sự kiện và tin ưu đãi
+          </h2>
+
+          <p class="section-description">
+            Những nội dung mới nhất sẽ tự động xuất hiện tại đây.
+          </p>
+
+          <div class="event-grid" id="eventGrid">
+
+            <!-- CARD 01 -->
+
+            <button
+              type="button"
+              class="event-card"
+              data-category="offer"
+              data-modal-title="Chương trình HAMIE"
+              data-modal-type="ƯU ĐÃI / HAMIE"
+              aria-label="Xem thông tin chương trình HAMIE"
+            >
+              <div class="event-photo">
+                <img
+                  src="assets/orange-tea.png"
+                  alt="Minh họa thức uống trái cây HAMIE"
+                  loading="lazy"
+                >
+              </div>
+
+              <div class="event-card-body">
+                <h3 class="event-card-title">
+                  CHƯƠNG TRÌNH / HAMIE
+                </h3>
+                <p class="event-card-description">
+                  Nội dung sẽ cập nhật từ CMS
+                </p>
+              </div>
+            </button>
+
+            <!-- CARD 02 -->
+
+            <button
+              type="button"
+              class="event-card"
+              data-category="event"
+              data-modal-title="Sự kiện HAMIE"
+              data-modal-type="SỰ KIỆN / HAMIE"
+              aria-label="Xem thông tin sự kiện HAMIE"
+            >
+              <div class="event-photo">
+                <img
+                  src="assets/orange-tea.png"
+                  alt="Minh họa đồ uống HAMIE"
+                  loading="lazy"
+                >
+              </div>
+
+              <div class="event-card-body">
+                <h3 class="event-card-title">
+                  CHƯƠNG TRÌNH / HAMIE
+                </h3>
+                <p class="event-card-description">
+                  Nội dung sẽ cập nhật từ CMS
+                </p>
+              </div>
+            </button>
+
+            <!-- CARD 03 -->
+
+            <button
+              type="button"
+              class="event-card"
+              data-category="event"
+              data-modal-title="Hoạt động tại HAMIE"
+              data-modal-type="SỰ KIỆN / HAMIE"
+              aria-label="Xem thông tin hoạt động HAMIE"
+            >
+              <div class="event-photo">
+                <img
+                  src="assets/orange-tea.png"
+                  alt="Minh họa thức uống HAMIE"
+                  loading="lazy"
+                >
+              </div>
+
+              <div class="event-card-body">
+                <h3 class="event-card-title">
+                  CHƯƠNG TRÌNH / HAMIE
+                </h3>
+                <p class="event-card-description">
+                  Nội dung sẽ cập nhật từ CMS
+                </p>
+              </div>
+            </button>
+
+          </div>
+
+          <p
+            class="filter-feedback"
+            id="filterFeedback"
+            role="status"
+            aria-live="polite"
+          ></p>
+
+        </section>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =============== FOOTER =============== -->
+
+  <footer class="site-footer">
+
+    <h2 class="footer-brand">HAMIE</h2>
+
+    <nav class="footer-nav" aria-label="Điều hướng cuối trang">
+      <a href="index.html">TRANG CHỦ</a>
+      <a href="thuc-don.html">THỰC ĐƠN</a>
+      <a href="ve-hamie.html">VỀ HAMIE</a>
+      <a href="khong-gian.html">KHÔNG GIAN</a>
+      <a href="uu-dai.html">ƯU ĐÃI</a>
+      <a href="index.html#stories">GÓC HAMIE</a>
+      <a href="index.html#contact">LIÊN HỆ</a>
+    </nav>
+
+    <div class="social-links" aria-label="Mạng xã hội HAMIE">
+
+      <span class="social-icon" title="Facebook">f</span>
+
+      <span class="social-icon zalo" title="Zalo">Zalo</span>
+
+      <span class="social-icon" title="Website">
+        <svg viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.5"
+          aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M3 12h18"/>
+          <path d="M12 3c5 5 5 13 0 18"/>
+          <path d="M12 3c-5 5-5 13 0 18"/>
+        </svg>
+      </span>
+
+    </div>
+
+    <p class="copyright">
+      © 2026 HAMIE Coffee &amp; Tea. All rights reserved.
+    </p>
+
+  </footer>
+
+  <!-- =============== DETAIL MODAL =============== -->
+
+  <div
+    class="offer-modal"
+    id="offerModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+    aria-describedby="modalDescription"
+    hidden
+  >
+    <div class="modal-content">
+
+      <button
+        type="button"
+        class="modal-close"
+        id="closeModal"
+        aria-label="Đóng cửa sổ"
+      >
+        &times;
+      </button>
+
+      <p class="modal-eyebrow" id="modalType">
+        ƯU ĐÃI / HAMIE
+      </p>
+
+      <h2 id="modalTitle">
+        Ưu đãi nổi bật
+      </h2>
+
+      <p id="modalDescription">
+        Hiện chưa có chương trình được xác nhận.
+      </p>
+
+      <p class="modal-note">
+        HAMIE sẽ cập nhật nội dung, thời gian và các điều kiện
+        tham gia khi chương trình được phê duyệt chính thức.
+      </p>
+
+    </div>
+  </div>
+
+  <!-- =============== JAVASCRIPT =============== -->
+
+  <script>
+    /* ========== MOBILE NAVIGATION ========== */
+
+    const menuToggle = document.getElementById('menuToggle');
+    const siteNav = document.getElementById('siteNav');
+
+    function closeMobileMenu() {
+      siteNav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Mở menu');
+    }
+
+    menuToggle.addEventListener('click', function () {
+      const isOpen = siteNav.classList.toggle('open');
+
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute(
+        'aria-label',
+        isOpen ? 'Đóng menu' : 'Mở menu'
+      );
+    });
+
+    siteNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    document.addEventListener('click', function (event) {
+      if (
+        !siteNav.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
+        closeMobileMenu();
+      }
+    });
+
+    /* ========== CATEGORY FILTER ========== */
+
+    const filterButtons = [
+      ...document.querySelectorAll('.filter-btn')
+    ];
+
+    const eventCards = [
+      ...document.querySelectorAll('.event-card')
+    ];
+
+    const featuredOffer = document.getElementById('featuredOffer');
+    const filterFeedback = document.getElementById('filterFeedback');
+
+    let activeFilter = 'all';
+
+    function applyFilter(filter) {
+      activeFilter = filter;
+
+      filterButtons.forEach(function (button) {
+        const isActive = button.dataset.filter === filter;
+
+        button.classList.toggle('active', isActive);
+        button.setAttribute('aria-pressed', String(isActive));
+      });
+
+      // Featured offer is an offer-category item.
+      featuredOffer.hidden = filter === 'event';
+
+      let visibleCount = 0;
+
+      eventCards.forEach(function (card) {
+        const isVisible =
+          filter === 'all' ||
+          card.dataset.category === filter;
+
+        card.hidden = !isVisible;
+
+        if (isVisible) visibleCount++;
+      });
+
+      if (filter === 'all') {
+        filterFeedback.textContent = '';
+      } else if (filter === 'offer') {
+        filterFeedback.textContent =
+          'Đang hiển thị các mục ưu đãi. Nội dung hiện chờ cập nhật.';
+      } else {
+        filterFeedback.textContent =
+          'Đang hiển thị các mục sự kiện. Nội dung hiện chờ cập nhật.';
+      }
+    }
+
+    filterButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        applyFilter(button.dataset.filter);
+      });
+    });
+
+    /* ========== MODAL DETAILS ========== */
+
+    const offerModal = document.getElementById('offerModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalType = document.getElementById('modalType');
+    const modalDescription =
+      document.getElementById('modalDescription');
+
+    let previousFocus = null;
+
+    function openModal(title, type) {
+      previousFocus = document.activeElement;
+
+      modalTitle.textContent = title;
+      modalType.textContent = type;
+
+      modalDescription.textContent =
+        'Thông tin chương trình hiện chưa được xác nhận ' +
+        'và sẽ được cập nhật sau khi HAMIE công bố chính thức.';
+
+      offerModal.hidden = false;
+      document.body.classList.add('modal-open');
+
+      closeModalBtn.focus();
+    }
+
+    function closeModal() {
+      if (offerModal.hidden) return;
+
+      offerModal.hidden = true;
+      document.body.classList.remove('modal-open');
+
+      if (previousFocus && previousFocus.focus) {
+        previousFocus.focus();
+      }
+    }
+
+    document.getElementById('featuredDetailBtn')
+      .addEventListener('click', function () {
+        openModal(
+          this.dataset.modalTitle,
+          this.dataset.modalType
+        );
+      });
+
+    eventCards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        openModal(
+          card.dataset.modalTitle,
+          card.dataset.modalType
+        );
+      });
+    });
+
+    closeModalBtn.addEventListener('click', closeModal);
+
+    offerModal.addEventListener('click', function (event) {
+      if (event.target === offerModal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        if (!offerModal.hidden) {
+          closeModal();
+        } else {
+          closeMobileMenu();
+        }
+      }
+
+      // Keep keyboard focus inside the modal.
+      if (!offerModal.hidden && event.key === 'Tab') {
+        event.preventDefault();
+        closeModalBtn.focus();
+      }
+    });
+
+    /* ========== INITIALIZATION ========== */
+
+    applyFilter('all');
+  </script>
+
+</body>
+</html>
