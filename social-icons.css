@@ -1,0 +1,26 @@
+/* Consistent Facebook, Zalo and TikTok brand icons across the footer. */
+.site-footer .hamie-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 35px;
+}
+.site-footer .hamie-socials .hamie-social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 7px;
+  border: 1.5px solid #9dbc94;
+  border-radius: 50%;
+  background: transparent;
+  color: #b5d6aa;
+  line-height: 1;
+}
+.site-footer .hamie-socials .hamie-social-icon svg { display: block; width: 100%; height: 100%; }
+.site-footer .hamie-socials button:hover { background: #285744; color: white; }
+@media (max-width: 600px) {
+  .site-footer .hamie-socials { margin-top: 30px; }
+}
