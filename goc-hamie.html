@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#113d32">
-  <meta name="description" content="Cập nhật các chương trình ưu đãi, sự kiện và thông tin mới nhất từ HAMIE Coffee & Tea.">
-  <title>Ưu đãi & Sự kiện | HAMIE Coffee & Tea</title>
+  <meta name="theme-color" content="#09291f">
+  <meta name="description" content="Góc HAMIE - Những câu chuyện nhỏ bên ly cà phê tại HAMIE Coffee & Tea.">
+  <title>Góc HAMIE | HAMIE Coffee & Tea</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +21,7 @@
       --muted: #829086;
       --gold: #dfc186;
       --footer: #101010;
+      --light-green: #dce9dc;
     }
 
     * {
@@ -40,9 +41,27 @@
 
     body.modal-open { overflow: hidden; }
 
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; cursor: pointer; }
-    img { display: block; width: 100%; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      opacity: .4;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    [hidden] { display: none !important; }
 
     .container {
       width: 100%;
@@ -57,7 +76,9 @@
       outline-offset: 3px;
     }
 
-    /* =============== HEADER =============== */
+    /* =================================
+       HEADER
+    ================================= */
 
     .site-header {
       background: var(--cream);
@@ -115,15 +136,15 @@
     .contact-btn {
       min-width: 118px;
       min-height: 45px;
-      border-radius: 50px;
       background: #194a3a;
-      color: #fff;
+      color: white;
+      border-radius: 50px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-size: 11px;
       font-weight: 700;
-      transition: .2s;
+      transition: background .2s, transform .2s;
     }
 
     .contact-btn:hover {
@@ -133,13 +154,13 @@
 
     .mobile-toggle {
       display: none;
-      border: 0;
       background: transparent;
+      color: var(--green);
+      border: 0;
       width: 42px;
       height: 42px;
       align-items: center;
       justify-content: center;
-      color: var(--green);
     }
 
     .mobile-toggle svg {
@@ -147,295 +168,417 @@
       height: 26px;
     }
 
-    /* =============== HERO =============== */
+    /* =================================
+       HERO
+    ================================= */
 
-    .offers-hero {
-      background: var(--green);
+    .blog-hero {
+      background: var(--dark);
+      min-height: 420px;
       color: white;
-      min-height: 375px;
     }
 
     .hero-inner {
-      padding-top: 78px;
-      padding-bottom: 73px;
+      padding-top: 85px;
+      padding-bottom: 85px;
     }
 
     .hero-title {
       font-size: 52px;
       line-height: 1.2;
       font-weight: 800;
-      letter-spacing: -1.8px;
-      text-transform: uppercase;
+      letter-spacing: -1.7px;
     }
 
     .hero-subtitle {
-      color: #e1e9e1;
       font-size: 19px;
       line-height: 1.7;
-      margin-top: 30px;
+      color: #dce7de;
+      margin-top: 25px;
     }
 
     .hero-description {
-      color: var(--gold);
       font-size: 13px;
-      line-height: 1.8;
-      margin-top: 55px;
+      color: var(--gold);
+      line-height: 1.9;
+      margin-top: 35px;
     }
 
-    /* =============== MAIN CONTENT =============== */
+    /* =================================
+       MAIN BLOG SECTION
+    ================================= */
 
-    .offers-section {
-      padding: 52px 0 115px;
+    .blog-section {
       background: var(--cream);
+      padding: 55px 0 90px;
     }
 
     .section-title {
       font-size: 37px;
-      font-weight: 800;
       line-height: 1.35;
+      font-weight: 800;
       letter-spacing: -1.2px;
     }
 
     .section-description {
       margin-top: 10px;
-      color: var(--muted);
       font-size: 14px;
       line-height: 1.8;
+      color: var(--muted);
     }
 
-    /* =============== FILTER TABS =============== */
+    /* =================================
+       FILTER BUTTONS
+    ================================= */
 
     .filter-tabs {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      gap: 17px;
-      margin-top: 27px;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 30px;
     }
 
     .filter-btn {
-      min-width: 145px;
+      min-width: 146px;
       height: 40px;
+      padding: 0 22px;
       border-radius: 50px;
-      border: 1px solid #cbdccf;
-      color: var(--green);
+      border: 1px solid #ccdbd0;
       background: white;
+      color: var(--green);
       font-size: 11px;
       font-weight: 700;
-      padding: 0 24px;
-      transition: .2s;
+      transition: .2s ease;
     }
 
     .filter-btn:first-child {
-      min-width: 110px;
+      min-width: 108px;
     }
 
     .filter-btn:hover {
-      background: #eaf0e7;
+      background: #e9f1e7;
       border-color: var(--green);
     }
 
     .filter-btn.active {
       background: var(--green);
-      border-color: var(--green);
       color: white;
+      border-color: var(--green);
     }
 
-    /* =============== FEATURED OFFER =============== */
+    /* =================================
+       FEATURED ARTICLE
+    ================================= */
 
-    .featured-offer {
-      display: grid;
-      grid-template-columns: 48% 52%;
+    .featured-article {
+      margin-top: 63px;
       background: white;
-      padding: 16px;
+      padding: 15px;
       border-radius: 19px;
       min-height: 495px;
-      margin-top: 51px;
+      display: grid;
+      grid-template-columns: 49% 51%;
       overflow: hidden;
     }
 
-    .featured-offer[hidden] {
-      display: none;
-    }
-
-    .featured-image {
-      height: 463px;
+    .featured-photo {
       border-radius: 15px;
       overflow: hidden;
-      background: #dce9dc;
+      background: #ebe5da;
+      min-height: 465px;
     }
 
-    .featured-image img {
+    .featured-photo img {
       width: 100%;
       height: 100%;
+      min-height: 465px;
       object-fit: cover;
       object-position: center;
+      filter: sepia(.13) saturate(.77);
     }
 
     .featured-content {
+      padding: 51px 43px 39px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      padding: 39px 36px 31px 43px;
-      min-width: 0;
     }
 
     .featured-title {
-      font-size: 28px;
+      font-size: 27px;
+      line-height: 1.36;
       font-weight: 800;
-      letter-spacing: -.8px;
-      line-height: 1.4;
-    }
-
-    .featured-status {
-      font-size: 17px;
-      line-height: 1.6;
-      color: #77867a;
-      margin-top: 22px;
-      font-weight: 600;
+      letter-spacing: -.7px;
+      max-width: 450px;
     }
 
     .featured-description {
       font-size: 13px;
       line-height: 1.9;
-      margin-top: 31px;
-      color: var(--green);
+      color: #809086;
+      margin-top: 28px;
+      max-width: 425px;
     }
 
-    .featured-actions {
-      margin-top: auto;
-      display: flex;
-      align-items: flex-start;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .status-pill {
+    .read-btn {
       display: inline-flex;
-      justify-content: center;
       align-items: center;
-      padding: 0 20px;
-      height: 32px;
-      min-width: 135px;
-      border: 1px solid #cbdccf;
-      color: var(--green);
+      justify-content: center;
+      height: 43px;
+      min-width: 164px;
+      padding: 0 25px;
       border-radius: 50px;
-      background: white;
-      font-size: 10px;
-      font-weight: 600;
-    }
-
-    .detail-btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      min-width: 165px;
-      min-height: 39px;
+      border: 0;
       background: var(--green);
       color: white;
-      border: 0;
-      border-radius: 50px;
       font-size: 10px;
       font-weight: 800;
-      transition: .2s ease;
+      transition: transform .2s, background .2s;
     }
 
-    .detail-btn:hover {
+    .read-btn:hover {
       background: #24634e;
       transform: translateY(-2px);
     }
 
-    /* =============== EVENT SECTION =============== */
-
-    .events-section {
-      margin-top: 74px;
+    .featured-content .read-btn {
+      margin-top: auto;
     }
 
-    .event-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 32px;
+    /* =================================
+       LATEST ARTICLES
+    ================================= */
+
+    .latest-section {
       margin-top: 76px;
     }
 
-    .event-card {
-      min-width: 0;
-      padding: 0;
-      display: block;
-      background: transparent;
-      border: 1px solid transparent;
-      border-radius: 16px;
-      color: var(--green);
+    /* =================================
+       SLIDER
+    ================================= */
+
+    .slider-wrapper {
+      position: relative;
+      margin-top: 60px;
+      padding: 0 65px;
+    }
+
+    .blog-slider {
+      display: grid;
+      grid-template-columns: 52% 48%;
+      min-height: 305px;
+      border-radius: 17px;
       overflow: hidden;
-      text-align: left;
-      transition: transform .2s, box-shadow .2s;
+      background: #e1eae0;
     }
 
-    .event-card[hidden] {
-      display: none;
-    }
-
-    .event-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 27px #09291f13;
-    }
-
-    .event-photo {
+    .slider-image {
       width: 100%;
-      aspect-ratio: 1.84 / 1;
+      height: 305px;
       overflow: hidden;
-      border-radius: 15px 15px 0 0;
-      background: #f0d4a7;
+      background: #dce9dc;
     }
 
-    .event-photo img {
+    .slider-image img {
+      width: 100%;
       height: 100%;
-      width: 100%;
       object-fit: cover;
       object-position: center;
-      transition: transform .3s;
+      transition: opacity .2s ease;
     }
 
-    .event-card:hover .event-photo img {
-      transform: scale(1.045);
+    .slider-content {
+      background: var(--dark);
+      color: white;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 26px 32px 35px;
     }
 
-    .event-card-body {
-      padding: 17px 14px 23px;
-      min-height: 91px;
+    .slider-label {
+      color: #ddbd7c;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    .slider-title {
+      color: white;
+      font-size: 22px;
+      line-height: 1.45;
+      letter-spacing: -.5px;
+      font-weight: 800;
+    }
+
+    .slider-description {
+      color: #c8d6cc;
+      font-size: 12px;
+      line-height: 1.9;
+      margin-top: 30px;
+    }
+
+    .slider-read-btn {
+      min-width: 180px;
+      height: 43px;
+      padding: 0 22px;
       background: var(--cream);
+      color: var(--green);
+      border-radius: 50px;
+      border: 0;
+      font-size: 10px;
+      font-weight: 800;
+      margin-top: auto;
+      transition: .2s;
     }
 
-    .event-card-title {
-      font-size: 13px;
+    .slider-read-btn:hover {
+      background: #dfebda;
+      transform: translateY(-2px);
+    }
+
+    /* SLIDER ARROWS */
+
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 0;
+      box-shadow: 0 4px 12px #00000015;
+      transition: transform .2s ease;
+    }
+
+    .slider-arrow:hover:not(:disabled) {
+      transform: translateY(-50%) scale(1.09);
+    }
+
+    .slider-arrow svg {
+      width: 21px;
+      height: 21px;
+    }
+
+    .slider-prev {
+      left: 0;
+      background: var(--green);
+      color: white;
+    }
+
+    .slider-next {
+      right: 0;
+      background: #ead6ad;
+      color: var(--green);
+    }
+
+    /* SLIDER DOTS */
+
+    .slider-dots {
+      position: absolute;
+      right: 27px;
+      bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .slider-dot {
+      width: 5px;
+      height: 5px;
+      border: 0;
+      padding: 0;
+      border-radius: 50%;
+      background: #638074;
+      transition: .2s;
+    }
+
+    .slider-dot.active {
+      width: 6px;
+      height: 6px;
+      background: #dfbb73;
+    }
+
+    /* =================================
+       ARTICLE THUMBNAILS
+    ================================= */
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 32px;
+      margin-top: 24px;
+    }
+
+    .article-card {
+      display: block;
+      text-align: left;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--green);
+      min-width: 0;
+    }
+
+    .article-photo {
+      width: 100%;
+      aspect-ratio: 1.8 / 1;
+      background: #dce9dc;
+      overflow: hidden;
+      border-radius: 15px 15px 0 0;
+    }
+
+    .article-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform .3s ease;
+    }
+
+    .article-card:hover .article-photo img {
+      transform: scale(1.05);
+    }
+
+    .article-card-label {
+      display: block;
+      padding: 17px 13px 8px;
+      font-size: 11px;
       font-weight: 800;
       line-height: 1.6;
+      color: var(--green);
     }
 
-    .event-card-description {
-      font-size: 11px;
-      color: #829086;
-      margin-top: 5px;
-      line-height: 1.7;
+    .article-card.active .article-photo {
+      outline: 2px solid #b5ccb8;
+      outline-offset: 2px;
     }
 
-    .filter-feedback {
+    .empty-state {
       margin-top: 25px;
+      padding: 25px;
+      background: white;
+      border-radius: 14px;
       font-size: 13px;
+      line-height: 1.8;
       color: var(--muted);
     }
 
-    .filter-feedback:empty {
-      display: none;
-    }
-
-    /* =============== FOOTER =============== */
+    /* =================================
+       FOOTER
+    ================================= */
 
     .site-footer {
       background: var(--footer);
       min-height: 330px;
       padding: 70px 20px 55px;
-      color: #fff;
+      color: white;
       text-align: center;
     }
 
@@ -448,16 +591,16 @@
     .footer-nav {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       gap: 29px;
       margin-top: 36px;
     }
 
     .footer-nav a {
+      color: #e8e8e8;
       font-size: 10px;
       text-transform: uppercase;
-      color: #e8e8e8;
       transition: color .2s;
     }
 
@@ -468,17 +611,17 @@
     .social-links {
       display: flex;
       justify-content: center;
-      gap: 12px;
       align-items: center;
+      gap: 12px;
       margin-top: 35px;
     }
 
     .social-icon {
+      width: 33px;
+      height: 33px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 33px;
-      height: 33px;
       border: 1.5px solid #9dbc94;
       border-radius: 50%;
       color: #b5d6aa;
@@ -504,75 +647,78 @@
       line-height: 1.7;
     }
 
-    /* =============== DETAIL MODAL =============== */
+    /* =================================
+       ARTICLE MODAL
+    ================================= */
 
-    .offer-modal {
+    .article-modal {
       position: fixed;
       inset: 0;
       z-index: 9999;
+      background: rgba(4, 25, 18, .85);
       display: flex;
-      justify-content: center;
       align-items: center;
-      background: rgba(4, 25, 18, .8);
+      justify-content: center;
       padding: 20px;
-    }
-
-    .offer-modal[hidden] {
-      display: none;
     }
 
     .modal-content {
       position: relative;
+      width: 100%;
+      max-width: 580px;
+      max-height: 90vh;
+      overflow-y: auto;
       background: var(--cream);
       border-radius: 20px;
       padding: 43px;
-      width: 100%;
-      max-width: 530px;
-      color: var(--green);
       box-shadow: 0 25px 70px #0003;
     }
 
     .modal-close {
       position: absolute;
       top: 15px;
-      right: 19px;
-      border: none;
+      right: 18px;
+      width: 38px;
+      height: 38px;
+      border: 0;
       background: transparent;
-      font-size: 28px;
       color: var(--green);
-      width: 37px;
-      height: 37px;
-    }
-
-    .modal-eyebrow {
-      color: #8b976e;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 15px;
-    }
-
-    .modal-content h2 {
       font-size: 28px;
-      line-height: 1.4;
-      font-weight: 800;
-      margin-bottom: 20px;
     }
 
-    .modal-content p {
+    .modal-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #82916f;
+      margin-bottom: 17px;
+    }
+
+    .modal-title {
+      font-size: 27px;
+      font-weight: 800;
+      line-height: 1.45;
+      margin-bottom: 21px;
+    }
+
+    .modal-description {
       font-size: 14px;
       line-height: 1.9;
-      color: #728276;
+      color: #718276;
     }
 
-    .modal-content .modal-note {
-      margin-top: 20px;
-      padding: 17px 18px;
-      border-radius: 12px;
+    .modal-note {
       background: white;
+      border-radius: 12px;
+      padding: 17px 20px;
+      margin-top: 25px;
       font-size: 13px;
+      line-height: 1.85;
+      color: var(--green);
     }
 
-    /* =============== TABLET =============== */
+    /* =================================
+       TABLET
+    ================================= */
 
     @media (max-width: 1180px) {
       .container {
@@ -585,11 +731,14 @@
       .site-nav a { font-size: 11px; }
 
       .featured-content {
-        padding: 30px 25px 25px;
+        padding: 37px 29px 30px;
       }
 
-      .featured-title { font-size: 25px; }
-      .event-grid { gap: 23px; }
+      .featured-title { font-size: 24px; }
+      .slider-wrapper { padding: 0 55px; }
+      .slider-content { padding: 23px 25px 33px; }
+      .slider-title { font-size: 19px; }
+      .article-grid { gap: 22px; }
     }
 
     @media (max-width: 900px) {
@@ -605,9 +754,7 @@
         margin-left: auto;
       }
 
-      .header-inner > .contact-btn {
-        display: none;
-      }
+      .header-inner > .contact-btn { display: none; }
 
       .site-nav {
         display: none;
@@ -615,67 +762,77 @@
         top: 100%;
         left: 0;
         right: 0;
-        padding: 15px 28px 25px;
-        background: var(--cream);
-        box-shadow: 0 17px 25px #09291f20;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
+        padding: 15px 28px 25px;
+        background: var(--cream);
+        box-shadow: 0 17px 25px #09291f20;
       }
 
       .site-nav.open { display: flex; }
 
       .site-nav a {
-        font-size: 14px;
         padding: 15px 0;
+        font-size: 14px;
         border-bottom: 1px solid #e6e7df;
       }
 
-      .offers-hero { min-height: 330px; }
+      .blog-hero { min-height: 340px; }
 
       .hero-inner {
-        padding-top: 72px;
-        padding-bottom: 60px;
+        padding-top: 76px;
+        padding-bottom: 65px;
       }
 
-      .hero-title { font-size: 42px; }
+      .hero-title { font-size: 43px; }
       .section-title { font-size: 32px; }
 
-      .featured-offer {
-        min-height: 385px;
-        grid-template-columns: 48% 52%;
+      .featured-article {
+        min-height: 365px;
       }
 
-      .featured-image { height: 350px; }
+      .featured-photo,
+      .featured-photo img {
+        min-height: 335px;
+      }
 
       .featured-content {
-        padding: 20px 22px;
+        padding: 20px 23px;
       }
 
-      .featured-title { font-size: 23px; }
-
-      .featured-status {
-        font-size: 14px;
-        margin-top: 12px;
-      }
+      .featured-title { font-size: 21px; }
 
       .featured-description {
         font-size: 12px;
-        margin-top: 16px;
+        margin-top: 15px;
       }
 
-      .featured-actions { gap: 13px; }
-
-      .event-grid {
-        gap: 16px;
-        margin-top: 50px;
+      .blog-slider {
+        min-height: 275px;
       }
 
-      .event-card-title { font-size: 11px; }
-      .event-card-description { font-size: 10px; }
+      .slider-image { height: 275px; }
+      .slider-content { padding: 20px 19px 31px; }
+      .slider-title { font-size: 18px; }
+
+      .slider-description {
+        font-size: 11px;
+        margin-top: 18px;
+      }
+
+      .slider-read-btn {
+        height: 39px;
+        min-width: 145px;
+      }
+
+      .article-grid { gap: 15px; }
+      .article-card-label { font-size: 10px; }
     }
 
-    /* =============== MOBILE =============== */
+    /* =================================
+       MOBILE
+    ================================= */
 
     @media (max-width: 600px) {
       .container {
@@ -688,31 +845,31 @@
       .brand strong { font-size: 24px; }
       .brand small { font-size: 8px; }
 
-      .offers-hero { min-height: auto; }
+      .blog-hero { min-height: auto; }
 
       .hero-inner {
-        padding-top: 57px;
-        padding-bottom: 58px;
+        padding-top: 58px;
+        padding-bottom: 60px;
       }
 
       .hero-title {
-        font-size: 34px;
+        font-size: 35px;
         letter-spacing: -1px;
-        line-height: 1.25;
       }
 
       .hero-subtitle {
         font-size: 15px;
-        margin-top: 23px;
+        margin-top: 22px;
       }
 
       .hero-description {
         font-size: 12px;
-        margin-top: 30px;
+        margin-top: 28px;
       }
 
-      .offers-section {
-        padding: 39px 0 65px;
+      .blog-section {
+        padding-top: 39px;
+        padding-bottom: 60px;
       }
 
       .section-title {
@@ -724,99 +881,126 @@
 
       .filter-tabs {
         gap: 9px;
-        margin-top: 22px;
+        margin-top: 23px;
       }
 
       .filter-btn,
       .filter-btn:first-child {
         min-width: auto;
         height: 36px;
-        padding: 0 18px;
+        padding: 0 15px;
         font-size: 10px;
       }
 
-      .featured-offer {
+      .featured-article {
         grid-template-columns: 1fr;
+        min-height: auto;
         margin-top: 32px;
         padding: 12px;
-        border-radius: 17px;
-        min-height: auto;
       }
 
-      .featured-image {
+      .featured-photo,
+      .featured-photo img {
+        min-height: 0;
         height: auto;
-        aspect-ratio: 1.4;
-        border-radius: 12px;
+        aspect-ratio: 1.25;
       }
 
       .featured-content {
-        min-height: 285px;
-        padding: 27px 13px 16px;
+        min-height: 265px;
+        padding: 27px 14px 16px;
       }
 
-      .featured-title { font-size: 24px; }
-
-      .featured-status {
-        font-size: 14px;
-        margin-top: 16px;
-      }
+      .featured-title { font-size: 23px; }
 
       .featured-description {
-        margin-top: 18px;
         font-size: 12px;
+        margin-top: 19px;
+        margin-bottom: 30px;
       }
 
-      .featured-actions {
-        margin-top: 31px;
-        gap: 14px;
+      .latest-section { margin-top: 60px; }
+
+      .slider-wrapper {
+        margin-top: 32px;
+        padding: 0;
       }
 
-      .events-section { margin-top: 55px; }
+      .blog-slider {
+        grid-template-columns: 1fr;
+      }
 
-      .event-grid {
+      .slider-image {
+        height: auto;
+        aspect-ratio: 1.35;
+      }
+
+      .slider-content {
+        min-height: 265px;
+        padding: 27px 23px 35px;
+      }
+
+      .slider-label { margin-bottom: 17px; }
+      .slider-title { font-size: 21px; }
+
+      .slider-description {
+        font-size: 12px;
+        margin-top: 20px;
+        margin-bottom: 26px;
+      }
+
+      .slider-read-btn {
+        min-width: 165px;
+        height: 40px;
+      }
+
+      .slider-arrow {
+        top: 26%;
+        width: 42px;
+        height: 42px;
+      }
+
+      .slider-prev { left: 10px; }
+      .slider-next { right: 10px; }
+
+      .article-grid {
         grid-template-columns: 1fr;
         gap: 23px;
-        margin-top: 29px;
+        margin-top: 25px;
       }
 
-      .event-photo { aspect-ratio: 1.7; }
+      .article-photo { aspect-ratio: 1.6; }
 
-      .event-card-body {
-        min-height: 76px;
-        padding: 14px 15px;
+      .article-card-label {
+        font-size: 11px;
+        padding: 13px 9px 0;
       }
-
-      .event-card-title { font-size: 13px; }
-      .event-card-description { font-size: 11px; }
 
       .site-footer {
-        padding: 50px 20px 42px;
         min-height: auto;
+        padding: 51px 20px 43px;
       }
 
       .footer-brand { font-size: 26px; }
 
       .footer-nav {
         gap: 17px 22px;
-        margin-top: 30px;
+        margin-top: 29px;
       }
 
       .social-links { margin-top: 30px; }
-      .copyright { margin-top: 33px; }
+      .copyright { margin-top: 32px; }
 
-      .modal-content {
-        padding: 35px 24px 30px;
-      }
-
-      .modal-content h2 { font-size: 23px; }
+      .modal-content { padding: 35px 23px 28px; }
+      .modal-title { font-size: 23px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
 
       *, *::before, *::after {
-        animation-duration: .01ms !important;
         transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
       }
     }
   </style>
@@ -824,7 +1008,7 @@
 
 <body>
 
-  <!-- =============== HEADER =============== -->
+  <!-- ============== HEADER ============== -->
 
   <header class="site-header">
     <div class="container header-inner">
@@ -835,8 +1019,8 @@
       </a>
 
       <button
-        type="button"
         class="mobile-toggle"
+        type="button"
         id="menuToggle"
         aria-label="Mở menu"
         aria-controls="siteNav"
@@ -850,13 +1034,13 @@
       </button>
 
       <nav class="site-nav" id="siteNav" aria-label="Điều hướng chính">
-        <a href="index.html">Trang chủ</a>
-        <a href="thuc-don.html">Thực đơn</a>
-        <a href="ve-hamie.html">Về HAMIE</a>
-        <a href="khong-gian.html">Không gian</a>
-        <a href="uu-dai.html" aria-current="page">Ưu đãi</a>
-        <a href="index.html#stories">Góc HAMIE</a>
-        <a href="index.html#contact">Liên hệ</a>
+         <a class="current" href="#top">Trang chủ</a>
+       <a href="thuc-don.html">Thực đơn</a>
+       <a href="ve-hamie.html">Về HAMIE</a>
+       <a href="khong-gian.html">Không gian</a>
+        <a href="uu-dai.html">Ưu đãi</a>
+      <a href="goc-hamie.html">Góc HAMIE</a>
+       <a href="lien-he.html">Liên hệ</a>
       </nav>
 
       <a href="index.html#contact" class="contact-btn">
@@ -868,42 +1052,42 @@
 
   <main>
 
-    <!-- =============== HERO =============== -->
+    <!-- ============== HERO ============== -->
 
-    <section class="offers-hero">
+    <section class="blog-hero">
       <div class="container hero-inner">
 
         <h1 class="hero-title">
-          ƯU ĐÃI &amp; SỰ KIỆN
+          GÓC HAMIE
         </h1>
 
         <p class="hero-subtitle">
-          Mỗi lần ghé thăm, thêm một điều thú vị.
+          Những câu chuyện nhỏ bên ly cà phê
         </p>
 
         <p class="hero-description">
-          Chỉ công khai chương trình sau khi nội dung được chủ quán duyệt.
+          Bài viết mới, cảm hứng và những điều thú vị từ góc quán.
         </p>
 
       </div>
     </section>
 
-    <!-- =============== MAIN =============== -->
+    <!-- ============== BLOG CONTENT ============== -->
 
-    <section class="offers-section">
+    <section class="blog-section">
       <div class="container">
 
         <h2 class="section-title">
-          Có gì mới tại HAMIE?
+          Khám phá bài viết
         </h2>
 
         <p class="section-description">
-          Xem ưu đãi theo loại và thời gian diễn ra.
+          Những câu chuyện nhỏ bên ly cà phê.
         </p>
 
-        <!-- FILTER -->
+        <!-- CATEGORY FILTERS -->
 
-        <div class="filter-tabs" role="group" aria-label="Lọc ưu đãi và sự kiện">
+        <div class="filter-tabs" role="group" aria-label="Lọc chuyên mục bài viết">
 
           <button
             type="button"
@@ -917,177 +1101,198 @@
           <button
             type="button"
             class="filter-btn"
-            data-filter="offer"
+            data-filter="story"
             aria-pressed="false"
           >
-            Ưu đãi
+            Chuyện ở HAMIE
           </button>
 
           <button
             type="button"
             class="filter-btn"
-            data-filter="event"
+            data-filter="guide"
             aria-pressed="false"
           >
-            Sự kiện
+            Cẩm nang
+          </button>
+
+          <button
+            type="button"
+            class="filter-btn"
+            data-filter="news"
+            aria-pressed="false"
+          >
+            Tin tức
           </button>
 
         </div>
 
-        <!-- =============== FEATURED OFFER =============== -->
+        <!-- ============== FEATURED ARTICLE ============== -->
 
-        <article class="featured-offer" id="featuredOffer">
+        <article class="featured-article" id="featuredArticle">
 
-          <div class="featured-image">
+          <div class="featured-photo">
             <img
-              src="assets/orange-tea.png"
-              alt="Minh họa ly trà trái cây HAMIE"
+              src="assets/cozy-space.png"
+              alt="Minh họa góc ngồi xanh của HAMIE"
               fetchpriority="high"
             >
           </div>
 
           <div class="featured-content">
 
-            <h3 class="featured-title">
-              Ưu đãi nổi bật
+            <h3 class="featured-title" id="featuredTitle">
+              Chuyện kể từ những khoảnh khắc tại HAMIE.
             </h3>
 
-            <p class="featured-status">
-              Chưa có chương trình được xác nhận
+            <p class="featured-description" id="featuredDescription">
+              Nội dung mô tả ngắn, ngày đăng và chuyên mục sẽ
+              được lấy từ bài viết thực.
             </p>
 
-            <p class="featured-description">
-              Khám phá các hoạt động và thông tin mới nhất từ HAMIE.
-            </p>
-
-            <div class="featured-actions">
-
-              <span class="status-pill">
-                Chờ nội dung
-              </span>
-
-              <button
-                type="button"
-                class="detail-btn"
-                id="featuredDetailBtn"
-                data-modal-title="Ưu đãi nổi bật"
-                data-modal-type="ƯU ĐÃI / HAMIE"
-              >
-                XEM CHI TIẾT
-              </button>
-
-            </div>
+            <button
+              type="button"
+              class="read-btn"
+              id="featuredReadBtn"
+            >
+              ĐỌC BÀI VIẾT
+            </button>
 
           </div>
 
         </article>
 
-        <!-- =============== EVENTS GRID =============== -->
+        <!-- ============== LATEST ARTICLES ============== -->
 
-        <section class="events-section" aria-labelledby="eventsHeading">
+        <section class="latest-section" aria-labelledby="latestTitle">
 
-          <h2 class="section-title" id="eventsHeading">
-            Các sự kiện và tin ưu đãi
+          <h2 class="section-title" id="latestTitle">
+            Bài viết mới nhất
           </h2>
 
           <p class="section-description">
-            Những nội dung mới nhất sẽ tự động xuất hiện tại đây.
+            Bản nháp chưa xuất bản sẽ không xuất hiện.
           </p>
 
-          <div class="event-grid" id="eventGrid">
+          <!-- SLIDER -->
 
-            <!-- CARD 01 -->
+          <div class="slider-wrapper" id="articleSlider">
 
             <button
               type="button"
-              class="event-card"
-              data-category="offer"
-              data-modal-title="Chương trình HAMIE"
-              data-modal-type="ƯU ĐÃI / HAMIE"
-              aria-label="Xem thông tin chương trình HAMIE"
+              class="slider-arrow slider-prev"
+              id="prevSlide"
+              aria-label="Bài viết trước"
             >
-              <div class="event-photo">
-                <img
-                  src="assets/orange-tea.png"
-                  alt="Minh họa thức uống trái cây HAMIE"
-                  loading="lazy"
-                >
-              </div>
-
-              <div class="event-card-body">
-                <h3 class="event-card-title">
-                  CHƯƠNG TRÌNH / HAMIE
-                </h3>
-                <p class="event-card-description">
-                  Nội dung sẽ cập nhật từ CMS
-                </p>
-              </div>
+              <svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5m7-7-7 7 7 7"/>
+              </svg>
             </button>
 
-            <!-- CARD 02 -->
+            <div class="blog-slider">
 
-            <button
-              type="button"
-              class="event-card"
-              data-category="event"
-              data-modal-title="Sự kiện HAMIE"
-              data-modal-type="SỰ KIỆN / HAMIE"
-              aria-label="Xem thông tin sự kiện HAMIE"
-            >
-              <div class="event-photo">
+              <div class="slider-image">
                 <img
-                  src="assets/orange-tea.png"
-                  alt="Minh họa đồ uống HAMIE"
-                  loading="lazy"
+                  src="assets/cozy-space.png"
+                  id="sliderImage"
+                  alt="Minh họa bài viết Góc HAMIE"
                 >
               </div>
 
-              <div class="event-card-body">
-                <h3 class="event-card-title">
-                  CHƯƠNG TRÌNH / HAMIE
-                </h3>
-                <p class="event-card-description">
-                  Nội dung sẽ cập nhật từ CMS
-                </p>
-              </div>
-            </button>
+              <div class="slider-content" aria-live="polite">
 
-            <!-- CARD 03 -->
+                <p class="slider-label" id="sliderLabel">
+                  GÓC HAMIE / CHUYỆN KỂ
+                </p>
+
+                <h3 class="slider-title" id="sliderTitle">
+                  Một khoảng lặng giữa hương cà phê
+                </h3>
+
+                <p class="slider-description" id="sliderDescription">
+                  Góc HAMIE - Bài viết minh họa, thay bằng nội dung CMS.
+                </p>
+
+                <button
+                  type="button"
+                  class="slider-read-btn"
+                  id="sliderReadBtn"
+                >
+                  ĐỌC BÀI VIẾT
+                </button>
+
+                <div class="slider-dots" id="sliderDots" role="group" aria-label="Chọn bài viết">
+                </div>
+
+              </div>
+
+            </div>
 
             <button
               type="button"
-              class="event-card"
-              data-category="event"
-              data-modal-title="Hoạt động tại HAMIE"
-              data-modal-type="SỰ KIỆN / HAMIE"
-              aria-label="Xem thông tin hoạt động HAMIE"
+              class="slider-arrow slider-next"
+              id="nextSlide"
+              aria-label="Bài viết tiếp theo"
             >
-              <div class="event-photo">
-                <img
-                  src="assets/orange-tea.png"
-                  alt="Minh họa thức uống HAMIE"
-                  loading="lazy"
-                >
-              </div>
-
-              <div class="event-card-body">
-                <h3 class="event-card-title">
-                  CHƯƠNG TRÌNH / HAMIE
-                </h3>
-                <p class="event-card-description">
-                  Nội dung sẽ cập nhật từ CMS
-                </p>
-              </div>
+              <svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14m-7-7 7 7-7 7"/>
+              </svg>
             </button>
 
           </div>
 
-          <p
-            class="filter-feedback"
-            id="filterFeedback"
-            role="status"
-            aria-live="polite"
-          ></p>
+          <!-- THREE ARTICLE THUMBNAILS -->
+
+          <div class="article-grid" id="articleGrid">
+
+            <button type="button" class="article-card" data-id="post-1">
+              <div class="article-photo">
+                <img
+                  src="assets/cozy-space.png"
+                  alt="Minh họa góc HAMIE"
+                  loading="lazy"
+                >
+              </div>
+              <span class="article-card-label">
+                GÓC HAMIE / CHUYỆN NHỎ
+              </span>
+            </button>
+
+            <button type="button" class="article-card" data-id="post-2">
+              <div class="article-photo">
+                <img
+                  src="assets/cozy-space.png"
+                  alt="Minh họa không gian HAMIE"
+                  loading="lazy"
+                >
+              </div>
+              <span class="article-card-label">
+                GÓC HAMIE / CHUYỆN NHỎ
+              </span>
+            </button>
+
+            <button type="button" class="article-card" data-id="post-3">
+              <div class="article-photo">
+                <img
+                  src="assets/cozy-space.png"
+                  alt="Minh họa góc cà phê HAMIE"
+                  loading="lazy"
+                >
+              </div>
+              <span class="article-card-label">
+                GÓC HAMIE / CHUYỆN NHỎ
+              </span>
+            </button>
+
+          </div>
+
+          <p class="empty-state" id="emptyState" hidden>
+            Chưa có bài viết trong chuyên mục này.
+          </p>
 
         </section>
 
@@ -1096,7 +1301,7 @@
 
   </main>
 
-  <!-- =============== FOOTER =============== -->
+  <!-- ============== FOOTER ============== -->
 
   <footer class="site-footer">
 
@@ -1108,15 +1313,19 @@
       <a href="ve-hamie.html">VỀ HAMIE</a>
       <a href="khong-gian.html">KHÔNG GIAN</a>
       <a href="uu-dai.html">ƯU ĐÃI</a>
-      <a href="index.html#stories">GÓC HAMIE</a>
+      <a href="goc-hamie.html">GÓC HAMIE</a>
       <a href="index.html#contact">LIÊN HỆ</a>
     </nav>
 
     <div class="social-links" aria-label="Mạng xã hội HAMIE">
 
-      <span class="social-icon" title="Facebook">f</span>
+      <span class="social-icon" title="Facebook">
+        f
+      </span>
 
-      <span class="social-icon zalo" title="Zalo">Zalo</span>
+      <span class="social-icon zalo" title="Zalo">
+        Zalo
+      </span>
 
       <span class="social-icon" title="Website">
         <svg viewBox="0 0 24 24" fill="none"
@@ -1137,17 +1346,18 @@
 
   </footer>
 
-  <!-- =============== DETAIL MODAL =============== -->
+  <!-- ============== ARTICLE MODAL ============== -->
 
   <div
-    class="offer-modal"
-    id="offerModal"
+    class="article-modal"
+    id="articleModal"
     role="dialog"
     aria-modal="true"
     aria-labelledby="modalTitle"
     aria-describedby="modalDescription"
     hidden
   >
+
     <div class="modal-content">
 
       <button
@@ -1159,30 +1369,34 @@
         &times;
       </button>
 
-      <p class="modal-eyebrow" id="modalType">
-        ƯU ĐÃI / HAMIE
+      <p class="modal-label" id="modalLabel">
+        GÓC HAMIE
       </p>
 
-      <h2 id="modalTitle">
-        Ưu đãi nổi bật
+      <h2 class="modal-title" id="modalTitle">
+        Góc HAMIE
       </h2>
 
-      <p id="modalDescription">
-        Hiện chưa có chương trình được xác nhận.
+      <p class="modal-description" id="modalDescription">
+        Nội dung bài viết hiện chưa được xuất bản.
       </p>
 
-      <p class="modal-note">
-        HAMIE sẽ cập nhật nội dung, thời gian và các điều kiện
-        tham gia khi chương trình được phê duyệt chính thức.
-      </p>
+      <div class="modal-note">
+        Đây là bản minh họa giao diện. HAMIE sẽ cập nhật
+        nội dung bài viết chính thức khi được phê duyệt
+        và công bố.
+      </div>
 
     </div>
+
   </div>
 
-  <!-- =============== JAVASCRIPT =============== -->
+  <!-- ============== JAVASCRIPT ============== -->
 
   <script>
-    /* ========== MOBILE NAVIGATION ========== */
+    /* ==================================
+       MOBILE MENU
+    ================================== */
 
     const menuToggle = document.getElementById('menuToggle');
     const siteNav = document.getElementById('siteNav');
@@ -1194,12 +1408,12 @@
     }
 
     menuToggle.addEventListener('click', function () {
-      const isOpen = siteNav.classList.toggle('open');
+      const opened = siteNav.classList.toggle('open');
 
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-expanded', String(opened));
       menuToggle.setAttribute(
         'aria-label',
-        isOpen ? 'Đóng menu' : 'Mở menu'
+        opened ? 'Đóng menu' : 'Mở menu'
       );
     });
 
@@ -1216,55 +1430,255 @@
       }
     });
 
-    /* ========== CATEGORY FILTER ========== */
+    /* ==================================
+       DEMO ARTICLE DATA
+
+       Dữ liệu minh họa giao diện.
+       Chưa kết nối CMS / database.
+       Chưa phải bài viết đã xuất bản.
+    ================================== */
+
+    const posts = [
+      {
+        id: 'post-1',
+        category: 'story',
+        label: 'GÓC HAMIE / CHUYỆN KỂ',
+        cardLabel: 'GÓC HAMIE / CHUYỆN NHỎ',
+        title: 'Một khoảng lặng giữa hương cà phê',
+        description: 'Góc HAMIE - Bài viết minh họa, thay bằng nội dung CMS.',
+        image: 'assets/cozy-space.png'
+      },
+      {
+        id: 'post-2',
+        category: 'story',
+        label: 'GÓC HAMIE / CHUYỆN KỂ',
+        cardLabel: 'GÓC HAMIE / CHUYỆN NHỎ',
+        title: 'Những câu chuyện nhỏ bên ly cà phê',
+        description: 'Nội dung minh họa đang chờ cập nhật từ HAMIE.',
+        image: 'assets/cozy-space.png'
+      },
+      {
+        id: 'post-3',
+        category: 'story',
+        label: 'GÓC HAMIE / CHUYỆN KỂ',
+        cardLabel: 'GÓC HAMIE / CHUYỆN NHỎ',
+        title: 'Một góc nhỏ, vô vàn cảm hứng',
+        description: 'Nội dung bài viết sẽ được cập nhật sau khi xuất bản.',
+        image: 'assets/cozy-space.png'
+      },
+      {
+        id: 'post-4',
+        category: 'guide',
+        label: 'GÓC HAMIE / CẨM NANG',
+        cardLabel: 'GÓC HAMIE / CẨM NANG',
+        title: 'Cẩm nang nhỏ tại HAMIE',
+        description: 'Chuyên mục cẩm nang đang chờ bài viết chính thức.',
+        image: 'assets/cozy-space.png'
+      },
+      {
+        id: 'post-5',
+        category: 'news',
+        label: 'GÓC HAMIE / TIN TỨC',
+        cardLabel: 'GÓC HAMIE / TIN TỨC',
+        title: 'Tin nhỏ từ góc HAMIE',
+        description: 'Thông tin mới sẽ được cập nhật khi HAMIE công bố.',
+        image: 'assets/cozy-space.png'
+      }
+    ];
+
+    let activeFilter = 'all';
+    let currentPostId = 'post-1';
 
     const filterButtons = [
       ...document.querySelectorAll('.filter-btn')
     ];
 
-    const eventCards = [
-      ...document.querySelectorAll('.event-card')
-    ];
+    const featuredTitle = document.getElementById('featuredTitle');
+    const featuredDescription = document.getElementById('featuredDescription');
 
-    const featuredOffer = document.getElementById('featuredOffer');
-    const filterFeedback = document.getElementById('filterFeedback');
+    const sliderImage = document.getElementById('sliderImage');
+    const sliderLabel = document.getElementById('sliderLabel');
+    const sliderTitle = document.getElementById('sliderTitle');
+    const sliderDescription = document.getElementById('sliderDescription');
 
-    let activeFilter = 'all';
+    const sliderDots = document.getElementById('sliderDots');
+    const articleGrid = document.getElementById('articleGrid');
+    const emptyState = document.getElementById('emptyState');
+
+    const prevSlide = document.getElementById('prevSlide');
+    const nextSlide = document.getElementById('nextSlide');
+
+    function getFilteredPosts() {
+      return posts.filter(function (post) {
+        return activeFilter === 'all' ||
+          post.category === activeFilter;
+      });
+    }
+
+    function getCurrentPost() {
+      return posts.find(function (post) {
+        return post.id === currentPostId;
+      });
+    }
+
+    /* ==================================
+       RENDER FEATURED ARTICLE
+    ================================== */
+
+    function renderFeaturedArticle() {
+      const filtered = getFilteredPosts();
+      const featuredPost = filtered[0];
+
+      if (!featuredPost) return;
+
+      if (activeFilter === 'all' || activeFilter === 'story') {
+        featuredTitle.textContent =
+          'Chuyện kể từ những khoảnh khắc tại HAMIE.';
+        featuredDescription.textContent =
+          'Nội dung mô tả ngắn, ngày đăng và chuyên mục sẽ được lấy từ bài viết thực.';
+      } else {
+        featuredTitle.textContent = featuredPost.title;
+        featuredDescription.textContent = featuredPost.description;
+      }
+
+      document.querySelector('.featured-photo img').src =
+        featuredPost.image;
+    }
+
+    /* ==================================
+       RENDER SLIDER
+    ================================== */
+
+    function renderSlider() {
+      const filtered = getFilteredPosts();
+      const post = getCurrentPost();
+
+      if (!post || filtered.length === 0) return;
+
+      sliderImage.src = post.image;
+      sliderImage.alt = 'Minh họa: ' + post.title;
+
+      sliderLabel.textContent = post.label;
+      sliderTitle.textContent = post.title;
+      sliderDescription.textContent = post.description;
+
+      // Create pagination dots
+      sliderDots.replaceChildren();
+
+      filtered.forEach(function (item, index) {
+        const dot = document.createElement('button');
+
+        dot.type = 'button';
+        dot.className = 'slider-dot';
+        dot.setAttribute(
+          'aria-label',
+          'Xem bài viết ' + (index + 1)
+        );
+
+        const selected = item.id === currentPostId;
+
+        dot.classList.toggle('active', selected);
+        dot.setAttribute('aria-current', selected ? 'true' : 'false');
+
+        dot.addEventListener('click', function () {
+          currentPostId = item.id;
+          renderSlider();
+          renderArticleGrid();
+        });
+
+        sliderDots.appendChild(dot);
+      });
+
+      const canNavigate = filtered.length > 1;
+
+      prevSlide.disabled = !canNavigate;
+      nextSlide.disabled = !canNavigate;
+    }
+
+    /* ==================================
+       RENDER ARTICLE THUMBNAILS
+    ================================== */
+
+    function renderArticleGrid() {
+      const filtered = getFilteredPosts();
+
+      articleGrid.replaceChildren();
+
+      // Show up to 3 cards as in the Figma layout.
+      const visiblePosts = filtered.slice(0, 3);
+
+      visiblePosts.forEach(function (post) {
+        const card = document.createElement('button');
+        card.type = 'button';
+        card.className = 'article-card';
+
+        card.setAttribute(
+          'aria-label',
+          'Xem: ' + post.title
+        );
+
+        card.classList.toggle(
+          'active',
+          post.id === currentPostId
+        );
+
+        const photo = document.createElement('div');
+        photo.className = 'article-photo';
+
+        const img = document.createElement('img');
+        img.src = post.image;
+        img.alt = 'Minh họa ' + post.title;
+        img.loading = 'lazy';
+
+        const label = document.createElement('span');
+        label.className = 'article-card-label';
+        label.textContent = post.cardLabel;
+
+        photo.appendChild(img);
+        card.appendChild(photo);
+        card.appendChild(label);
+
+        card.addEventListener('click', function () {
+          currentPostId = post.id;
+          renderSlider();
+          renderArticleGrid();
+
+          document.getElementById('articleSlider')
+            .scrollIntoView({
+              behavior: 'smooth',
+              block: 'center'
+            });
+        });
+
+        articleGrid.appendChild(card);
+      });
+
+      emptyState.hidden = filtered.length > 0;
+    }
+
+    /* ==================================
+       FILTER ARTICLES
+    ================================== */
 
     function applyFilter(filter) {
       activeFilter = filter;
 
       filterButtons.forEach(function (button) {
-        const isActive = button.dataset.filter === filter;
+        const active = button.dataset.filter === filter;
 
-        button.classList.toggle('active', isActive);
-        button.setAttribute('aria-pressed', String(isActive));
+        button.classList.toggle('active', active);
+        button.setAttribute('aria-pressed', String(active));
       });
 
-      // Featured offer is an offer-category item.
-      featuredOffer.hidden = filter === 'event';
+      const filtered = getFilteredPosts();
 
-      let visibleCount = 0;
-
-      eventCards.forEach(function (card) {
-        const isVisible =
-          filter === 'all' ||
-          card.dataset.category === filter;
-
-        card.hidden = !isVisible;
-
-        if (isVisible) visibleCount++;
-      });
-
-      if (filter === 'all') {
-        filterFeedback.textContent = '';
-      } else if (filter === 'offer') {
-        filterFeedback.textContent =
-          'Đang hiển thị các mục ưu đãi. Nội dung hiện chờ cập nhật.';
-      } else {
-        filterFeedback.textContent =
-          'Đang hiển thị các mục sự kiện. Nội dung hiện chờ cập nhật.';
+      if (!filtered.some(post => post.id === currentPostId)) {
+        currentPostId = filtered.length ? filtered[0].id : null;
       }
+
+      renderFeaturedArticle();
+      renderSlider();
+      renderArticleGrid();
     }
 
     filterButtons.forEach(function (button) {
@@ -1273,86 +1687,137 @@
       });
     });
 
-    /* ========== MODAL DETAILS ========== */
+    /* ==================================
+       SLIDER NAVIGATION
+    ================================== */
 
-    const offerModal = document.getElementById('offerModal');
+    function changeSlide(direction) {
+      const filtered = getFilteredPosts();
+
+      if (filtered.length <= 1) return;
+
+      let index = filtered.findIndex(function (post) {
+        return post.id === currentPostId;
+      });
+
+      index =
+        (index + direction + filtered.length) %
+        filtered.length;
+
+      currentPostId = filtered[index].id;
+
+      renderSlider();
+      renderArticleGrid();
+    }
+
+    prevSlide.addEventListener('click', function () {
+      changeSlide(-1);
+    });
+
+    nextSlide.addEventListener('click', function () {
+      changeSlide(1);
+    });
+
+    /* ==================================
+       ARTICLE MODAL
+    ================================== */
+
+    const articleModal = document.getElementById('articleModal');
     const closeModalBtn = document.getElementById('closeModal');
+
+    const modalLabel = document.getElementById('modalLabel');
     const modalTitle = document.getElementById('modalTitle');
-    const modalType = document.getElementById('modalType');
-    const modalDescription =
-      document.getElementById('modalDescription');
+    const modalDescription = document.getElementById('modalDescription');
 
     let previousFocus = null;
 
-    function openModal(title, type) {
+    function openArticleModal(post) {
       previousFocus = document.activeElement;
 
-      modalTitle.textContent = title;
-      modalType.textContent = type;
-
+      modalLabel.textContent = post.label;
+      modalTitle.textContent = post.title;
       modalDescription.textContent =
-        'Thông tin chương trình hiện chưa được xác nhận ' +
-        'và sẽ được cập nhật sau khi HAMIE công bố chính thức.';
+        'Bài viết này hiện là nội dung minh họa và chưa được xuất bản.';
 
-      offerModal.hidden = false;
+      articleModal.hidden = false;
       document.body.classList.add('modal-open');
 
       closeModalBtn.focus();
     }
 
-    function closeModal() {
-      if (offerModal.hidden) return;
+    function closeArticleModal() {
+      if (articleModal.hidden) return;
 
-      offerModal.hidden = true;
+      articleModal.hidden = true;
       document.body.classList.remove('modal-open');
 
-      if (previousFocus && previousFocus.focus) {
+      if (previousFocus && typeof previousFocus.focus === 'function') {
         previousFocus.focus();
       }
     }
 
-    document.getElementById('featuredDetailBtn')
+    // Featured article
+    document.getElementById('featuredReadBtn')
       .addEventListener('click', function () {
-        openModal(
-          this.dataset.modalTitle,
-          this.dataset.modalType
-        );
+        const filtered = getFilteredPosts();
+        if (filtered.length) openArticleModal(filtered[0]);
       });
 
-    eventCards.forEach(function (card) {
-      card.addEventListener('click', function () {
-        openModal(
-          card.dataset.modalTitle,
-          card.dataset.modalType
-        );
+    // Slider article
+    document.getElementById('sliderReadBtn')
+      .addEventListener('click', function () {
+        const post = getCurrentPost();
+        if (post) openArticleModal(post);
       });
-    });
 
-    closeModalBtn.addEventListener('click', closeModal);
+    closeModalBtn.addEventListener('click', closeArticleModal);
 
-    offerModal.addEventListener('click', function (event) {
-      if (event.target === offerModal) {
-        closeModal();
+    articleModal.addEventListener('click', function (event) {
+      if (event.target === articleModal) {
+        closeArticleModal();
       }
     });
+
+    /* ==================================
+       KEYBOARD INTERACTION
+    ================================== */
 
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape') {
-        if (!offerModal.hidden) {
-          closeModal();
+        if (!articleModal.hidden) {
+          closeArticleModal();
         } else {
           closeMobileMenu();
         }
+        return;
       }
 
-      // Keep keyboard focus inside the modal.
-      if (!offerModal.hidden && event.key === 'Tab') {
-        event.preventDefault();
-        closeModalBtn.focus();
+      if (!articleModal.hidden) {
+        if (event.key === 'Tab') {
+          event.preventDefault();
+          closeModalBtn.focus();
+        }
+        return;
+      }
+
+      const sliderWrapper = document.getElementById('articleSlider');
+
+      if (sliderWrapper.contains(document.activeElement)) {
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          changeSlide(-1);
+        }
+
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          changeSlide(1);
+        }
       }
     });
 
-    /* ========== INITIALIZATION ========== */
+    /* ==================================
+       INITIALIZATION
+    ================================== */
 
     applyFilter('all');
   </script>
