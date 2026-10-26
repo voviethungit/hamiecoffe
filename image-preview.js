@@ -3,9 +3,8 @@
 (() => {
   const preview = document.createElement('dialog');
   preview.className = 'hamie-image-preview';
-  preview.setAttribute('aria-label', 'Xem ảnh phóng lớn');
+  preview.setAttribute('aria-label', 'Ảnh phóng lớn. Bấm ra ngoài hoặc nhấn Escape để đóng.');
   preview.innerHTML = `
-    <button type="button" class="hamie-image-preview__close" aria-label="Đóng ảnh phóng lớn">&times;</button>
     <figure class="hamie-image-preview__figure">
       <img class="hamie-image-preview__image" alt="">
       <figcaption class="hamie-image-preview__caption"></figcaption>
@@ -14,7 +13,6 @@
 
   const enlargedImage = preview.querySelector('img');
   const caption = preview.querySelector('figcaption');
-  const closeButton = preview.querySelector('button');
   let previousFocus;
   let previousOverflow;
 
@@ -33,10 +31,10 @@
     caption.hidden = !img.alt;
     preview.showModal();
     document.body.style.overflow = 'hidden';
-    closeButton.focus();
+    enlargedImage.tabIndex = 0;
+    enlargedImage.focus();
   }
 
-  closeButton.addEventListener('click', () => preview.close());
   preview.addEventListener('click', event => {
     if (event.target === preview) preview.close();
   });
@@ -48,10 +46,13 @@
 
   // Capture image clicks before gallery/card handlers open another modal.
   document.addEventListener('click', event => {
-    if (!isPreviewable(event.target)) return;
+    const image = event.target.closest('#viewImageBtn')
+      ? document.getElementById('featuredImg')
+      : event.target;
+    if (!isPreviewable(image)) return;
     event.preventDefault();
     event.stopImmediatePropagation();
-    openPreview(event.target);
+    openPreview(image);
   }, true);
 
   document.addEventListener('keydown', event => {

@@ -921,6 +921,8 @@
   </style>
   <link rel="stylesheet" href="image-preview.css">
   <script src="image-preview.js" defer></script>
+  <link rel="stylesheet" href="header.css">
+  <script src="header.js" defer></script>
 </head>
 
 <body>
@@ -929,43 +931,25 @@
        HEADER
   ============================ -->
 
-  <header class="site-header">
-    <div class="container header-inner">
-
-      <a class="brand" href="index.html" aria-label="HAMIE - Trang chủ">
+  <header class="site-header hamie-header" id="top">
+    <div class="header-inner container">
+      <a href="index.html" class="brand" aria-label="HAMIE Coffee & Tea, về trang chủ">
         <strong>HAMIE</strong>
-        <small>COFFEE &amp; TEA</small>
+        <span>COFFEE &amp; TEA</span>
       </a>
-
-      <button
-        type="button"
-        class="mobile-toggle"
-        id="menuToggle"
-        aria-label="Mở menu"
-        aria-controls="siteNav"
-        aria-expanded="false"
-      >
-        <svg viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2"
-          stroke-linecap="round">
-          <path d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
+      <button type="button" class="mobile-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Mở menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
-
       <nav class="site-nav" id="siteNav" aria-label="Điều hướng chính">
-          <a class="current" href="#top">Trang chủ</a>
-       <a href="thuc-don.html">Thực đơn</a>
-       <a href="ve-hamie.html">Về HAMIE</a>
-       <a href="khong-gian.html">Không gian</a>
+        <a href="index.html">Trang chủ</a>
+        <a href="thuc-don.html">Thực đơn</a>
+        <a href="ve-hamie.html">Về HAMIE</a>
+        <a href="khong-gian.html" aria-current="page">Không gian</a>
         <a href="uu-dai.html">Ưu đãi</a>
-      <a href="goc-hamie.html">Góc HAMIE</a>
-       <a href="lien-he.html">Liên hệ</a>
+        <a href="goc-hamie.html">Góc HAMIE</a>
+        <a href="lien-he.html">Liên hệ</a>
       </nav>
-
-      <a href="index.html#contact" class="contact-btn">
-        LIÊN HỆ
-      </a>
-
+      <a href="lien-he.html" class="contact-btn">LIÊN HỆ</a>
     </div>
   </header>
 
