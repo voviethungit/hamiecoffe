@@ -495,6 +495,8 @@
   <link rel="stylesheet" href="header.css">
   <script src="header.js" defer></script>
   <link rel="stylesheet" href="social-icons.css">
+  <link rel="stylesheet" href="content.css">
+  <script src="content.js" defer></script>
 </head>
 
 <body>
@@ -695,7 +697,11 @@
   <script>
     const categoryFilter = document.querySelector('#categoryFilter');
     const menuSearch = document.querySelector('#menuSearch');
-    const cards = [...document.querySelectorAll('.menu-card')];
+    let cards = [...document.querySelectorAll('.menu-card')];
+    document.addEventListener('hamie:menu-updated', () => {
+      cards = [...document.querySelectorAll('.menu-card')];
+      filterMenu();
+    });
     const emptyState = document.querySelector('#emptyState');
     const resultCount = document.querySelector('#resultCount');
 

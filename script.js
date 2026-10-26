@@ -120,6 +120,20 @@ function openModal(type) {
   $('#modal-tag').textContent=info.tag;
   $('#modal-heading').textContent=info.title;
   modalContent.innerHTML=info.html; // Only local, trusted strings above
+  if (type === 'contact' && window.HAMIE_CONTENT) {
+    const settings = window.HAMIE_CONTENT.settings;
+    modalContent.replaceChildren();
+    [settings.address, settings.hours, settings.phone].filter(Boolean).forEach(text => {
+      const paragraph = document.createElement('p');
+      paragraph.textContent = text;
+      modalContent.append(paragraph);
+    });
+    const link = document.createElement('a');
+    link.href = 'lien-he.html';
+    link.className = 'btn btn-dark';
+    link.textContent = 'Gửi lời nhắn';
+    modalContent.append(link);
+  }
   modal.showModal();
 }
 $$('[data-modal]').forEach(btn=>btn.addEventListener('click',()=>openModal(btn.dataset.modal)));
