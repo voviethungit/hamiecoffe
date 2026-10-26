@@ -7,12 +7,14 @@ function el(tag, text, className) { const node=document.createElement(tag);if(te
 function notify(message,error=false) {const node=$('#notice');node.textContent=message;node.className=error?'error':'';node.hidden=false;clearTimeout(notify.timer);notify.timer=setTimeout(()=>node.hidden=true,5000);}
 async function api(path,method='GET',data) {
  const res=await fetch('/api/admin/'+path,{method,headers:data?{'Content-Type':'application/json'}:{},body:data?JSON.stringify(data):undefined});
+ if(!res.headers.get('content-type')?.includes('application/json'))throw new Error('API chưa hoạt động. Kiểm tra Netlify Functions và cấu hình build trong netlify.toml.');
  const value=await res.json();if(!res.ok){if(res.status===401&&path!=='login')showLogin();throw new Error(value.error||'Không thể kết nối.');}return value;
 }
 function showLogin() {$('#appView').hidden=true;$('#loginView').hidden=false;$('#menuDialog').close();}
 async function load() {
  [content,media,messages]=await Promise.all([api('content'),api('media'),api('messages')]);
  renderMenu();renderMedia();renderSettings();renderMessages();renderStats();
+ const limit=(content.uploadMaxBytes||8*1024*1024)/1024/1024;$('#uploadLimit').textContent=`tối đa ${limit} MB mỗi ảnh.`;
 }
 function renderStats() {$('#menuCount').textContent=content.menu.filter(x=>x.published).length;$('#mediaCount').textContent=media.length;const count=messages.filter(x=>x.status==='new').length;$('#messageCount').textContent=count;$('#unreadBadge').textContent=count?`(${count})`:'';}
 function showTab(tab) {document.querySelectorAll('.panel').forEach(node=>node.hidden=node.id!==tab);document.querySelectorAll('[data-tab]').forEach(node=>node.classList.toggle('active',node.dataset.tab===tab));$('#pageTitle').textContent=labels[tab];}
@@ -86,7 +88,7 @@ $('#menuForm').onsubmit=async event=>{
 };
 $('#uploadForm').onsubmit=async event=>{
  event.preventDefault();const file=$('#uploadFile').files[0],button=event.submitter;
- if(!file)return;if(file.size>8*1024*1024)return notify('Ảnh tối đa 8 MB.',true);
+ if(!file)return;const limit=content.uploadMaxBytes||8*1024*1024;if(file.size>limit)return notify(`Ảnh tối đa ${limit/1024/1024} MB.`,true);
  button.disabled=true;button.textContent='Đang tải…';
  try{const data=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result.split(',')[1]);reader.onerror=reject;reader.readAsDataURL(file);});await api('media','POST',{name:file.name,data});event.target.reset();await load();notify('Đã tải ảnh lên thư viện.');}catch(e){notify(e.message,true);}finally{button.disabled=false;button.textContent='Tải ảnh';}
 };

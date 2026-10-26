@@ -1,0 +1,94 @@
+{
+  "menu": [
+    {
+      "id": "menu-1",
+      "name": "Khám phá cà phê",
+      "category": "coffee",
+      "description": "Thông tin lấy từ thực đơn chính thức",
+      "image": "assets/coffee.png",
+      "prices": [],
+      "published": true
+    },
+    {
+      "id": "menu-2",
+      "name": "Trà & hương lá",
+      "category": "tea",
+      "description": "Thông tin lấy từ thực đơn chính thức",
+      "image": "assets/matcha.png",
+      "prices": [],
+      "published": true
+    },
+    {
+      "id": "menu-3",
+      "name": "Trái cây thanh mát",
+      "category": "fruit",
+      "description": "Thông tin lấy từ thực đơn chính thức",
+      "image": "assets/orange-tea.png",
+      "prices": [],
+      "published": true
+    },
+    {
+      "id": "menu-4",
+      "name": "Cà phê pha máy",
+      "category": "coffee",
+      "description": "Thông tin lấy từ thực đơn chính thức",
+      "image": "assets/coffee.png",
+      "prices": [],
+      "published": true
+    },
+    {
+      "id": "menu-5",
+      "name": "Trà trái cây",
+      "category": "tea",
+      "description": "Thông tin lấy từ thực đơn chính thức",
+      "image": "assets/matcha.png",
+      "prices": [],
+      "published": true
+    },
+    {
+      "id": "menu-6",
+      "name": "Đá xay & sinh tố",
+      "category": "fruit",
+      "description": "Thông tin lấy từ thực đơn chính thức",
+      "image": "assets/orange-tea.png",
+      "prices": [],
+      "published": true
+    },
+    {
+      "id": "menu-7",
+      "name": "Hương phin truyền thống",
+      "category": "coffee",
+      "description": "Thông tin lấy từ thực đơn chính thức",
+      "image": "assets/coffee.png",
+      "prices": [],
+      "published": true
+    },
+    {
+      "id": "menu-8",
+      "name": "Một chút trà sữa",
+      "category": "tea",
+      "description": "Thông tin lấy từ thực đơn chính thức",
+      "image": "assets/matcha.png",
+      "prices": [],
+      "published": true
+    },
+    {
+      "id": "menu-9",
+      "name": "Nước ép tươi mát",
+      "category": "fruit",
+      "description": "Thông tin lấy từ thực đơn chính thức",
+      "image": "assets/orange-tea.png",
+      "prices": [],
+      "published": true
+    }
+  ],
+  "images": {},
+  "settings": {
+    "address": "44 Lê Trung Đình, Ngũ Hành Sơn, Đà Nẵng",
+    "hours": "Hằng ngày: 06:00 – 22:00",
+    "facebook": "",
+    "zalo": "",
+    "tiktok": "",
+    "phone": ""
+  }
+}
