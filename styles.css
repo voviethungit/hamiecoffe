@@ -57,7 +57,7 @@ h2 {font-size:37px;line-height:1.27;letter-spacing:-.035em;font-weight:700;margi
 .hero-copy-inner {padding:64px 24px 0 0;width:calc(100% - max(80px, calc((100vw - 1440px) / 2 + 80px)));max-width:765px}
 .hero-eyebrow {color:#e2ca91;margin-bottom:54px}
 .hero h1 {font-family:Georgia,'Times New Roman',serif;font-size:79px;line-height:1.04;letter-spacing:-.05em;color:var(--cream);font-weight:700;margin:0 0 37px}
-.hero h1 em {font-weight:400;letter-spacing:-.065em}
+.hero h1 em {font-style:normal;font-weight:400;letter-spacing:-.025em}
 .hero-desc {color:#e7e9de;font-size:18px;line-height:1.7;margin-bottom:49px;white-space:normal}
 .hero-cta {display:flex;gap:20px;align-items:center}
 .hero-cta .btn {min-width:219px;min-height:55px}
